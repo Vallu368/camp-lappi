@@ -8,13 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float moveSpeedSlowed = 2f;
     private float currentSpeed;
-    private Transform cameraTransform;
     private float multiplier = 10f;
-    public bool inHeavySnow = false;
-
+    private bool inHeavySnow = false;
+    public bool crouching = false;
     float horizontal;
     float vertical;
     public Rigidbody rb;
+    public GameObject vcamFollow;
     
 
     Vector3 moveDirection;
@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Cursor.lockState = CursorLockMode.Locked; 
-        cameraTransform = Camera.main.transform;
         rb.freezeRotation = true;
 
     }
@@ -37,6 +36,17 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = moveSpeedSlowed;
         }
         else currentSpeed = moveSpeed;
+
+        if (crouching)
+        {
+            
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            crouching = true;
+        }
+        else crouching = false;
     }
 
     void Movement()
@@ -45,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         rb.drag = 6f;
 
-        moveDirection = cameraTransform.forward * vertical + transform.right * horizontal;
+        moveDirection = transform.forward * vertical + transform.right * horizontal;
         moveDirection.y = 0;
 
     }
