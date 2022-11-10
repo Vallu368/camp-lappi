@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,13 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeedSlowed = 2f;
     private float currentSpeed;
     private float multiplier = 10f;
-    private bool inHeavySnow = false;
+    public bool inHeavySnow = false;
     public bool crouching = false;
     float horizontal;
     float vertical;
     public Rigidbody rb;
     public GameObject vcamFollow;
-    
+    public GameObject vcamFollowCrouch;
+    public CinemachineVirtualCamera cam;
 
     Vector3 moveDirection;
 
@@ -39,8 +41,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (crouching)
         {
-            
+            cam.Follow = vcamFollowCrouch.transform;
         }
+        else cam.Follow = vcamFollow.transform;
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
@@ -63,22 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(moveDirection.normalized * currentSpeed * multiplier, ForceMode.Acceleration);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == ("Snow"))
-        {
-            Debug.Log("slow");
-            inHeavySnow = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.transform.tag == ("Snow"))
-        {
-            Debug.Log("not slowed");
-            inHeavySnow = false;
-        }
-    }
+    
 
 
 }
