@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,11 +28,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         rb.drag = 6f;
-
-        moveDirection = transform.forward * vertical + transform.right * horizontal;
+        
+        moveDirection = cameraTransform.forward * vertical + transform.right * horizontal;
+        moveDirection.y = 0;
 
     }
 
