@@ -1264,7 +1264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442f187ebaff8f4180347af4f99344d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
+  moveSpeedSlowed: 2
+  inHeavySnow: 0
   rb: {fileID: 249368518}
 --- !u!1 &8664846767185935825
 GameObject:
