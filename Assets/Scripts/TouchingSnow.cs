@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TouchingSnow : MonoBehaviour
 {
-    public PlayerMovement move;
+    //https://media.tenor.com/Hp8rb6NrNboAAAAi/cat-nodding.gif
+    //touch grass
+
+    
+    private PlayerMovement move;
 
     private void Start()
     {

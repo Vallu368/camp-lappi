@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float moveSpeedSlowed = 2f;
-    private float currentSpeed;
+    public float moveSpeed;
+    public float moveSpeedSlowed;
+    public float moveSpeedVerySlow;
+    public float moveSpeedShitMyPantSlow;
+    public float currentSpeed;
     private float multiplier = 10f;
     public bool inHeavySnow = false;
     public bool crouching = false;
+    public bool inFearAura = false;
     float horizontal;
     float vertical;
     public Rigidbody rb;
     public GameObject vcamFollow;
     public GameObject vcamFollowCrouch;
     public CinemachineVirtualCamera cam;
+
 
     Vector3 moveDirection;
 
@@ -32,12 +36,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Movement();
-        if (inHeavySnow)
+        if (inHeavySnow || crouching || inFearAura)
         {
             currentSpeed = moveSpeedSlowed;
         }
         else currentSpeed = moveSpeed;
+        if (inHeavySnow && crouching)
+        {
+            currentSpeed = moveSpeedVerySlow;
+        }
+        if (inHeavySnow && inFearAura)
+        {
+            currentSpeed = moveSpeedVerySlow;
+        }
+        if (crouching && inFearAura)
+        {
+            currentSpeed = moveSpeedVerySlow;
+        }
+        if (crouching && inFearAura && inHeavySnow)
+        {
+            currentSpeed = moveSpeedShitMyPantSlow;
+        }
+        
 
         if (crouching)
         {
