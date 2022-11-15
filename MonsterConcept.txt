@@ -1,0 +1,25 @@
+
+10.02 14/11/2022	Monster AI
+
+	Motion:
+-Moves forward with tank controls
+-Passively steers forward direction left or right smoothly
+-Once reaching level boundary, turns to face player's position (or a nearby point, depending on aggression value?)
+-Randomly pauses to look around (becomes harder to see?)
+-(Randomly pauses when nearby and facing the player, starts approaching immediately when player makes eye contact)
+
+	Hunting:
+-Conical FoV at head
+-Detection based both on movement and line of sight, balance staying still and reaching for cover
+-Gains "suspicion" when player enters conical FoV or moves in close proximity
+-At half suspicion, monster slows down and looks at player
+-At max suspicion, monster initiates attack
+
+	Attack:
+-Monster launches grasping arms which land after a delay with some inaccuracy, like tethered projectiles 
+-Arm hit initiates struggle
+
+	Struggle:
+-Locks controls and turns the camera to face the monster
+-(easy)QTE to stab the arm to break free
+-Avoids monster or player clipping into walls
