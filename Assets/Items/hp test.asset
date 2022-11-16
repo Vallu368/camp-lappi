@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66db06b43d1deec4a952d68fa0258923, type: 3}
+  m_Name: hp test
+  m_EditorClassIdentifier: 
+  itemName: hp
+  itemPrefab: {fileID: 890388222331923565, guid: 17297a7e00ff9124da73b9a4b292c626,
+    type: 3}

@@ -14,7 +14,7 @@ public class TouchingSnow : MonoBehaviour
     {
         move = GetComponentInChildren<PlayerMovement>();
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.tag == ("Snow"))
         {
@@ -22,7 +22,7 @@ public class TouchingSnow : MonoBehaviour
             move.inHeavySnow = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         if (collision.transform.tag == ("Snow"))
         {
@@ -30,5 +30,6 @@ public class TouchingSnow : MonoBehaviour
             move.inHeavySnow = false;
         }
     }
-}
+    
+}  
 
