@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: hp
   itemPrefab: {fileID: 890388222331923565, guid: 17297a7e00ff9124da73b9a4b292c626,
     type: 3}
+  health: 35

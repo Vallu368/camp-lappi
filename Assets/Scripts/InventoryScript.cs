@@ -6,6 +6,7 @@ public class InventoryScript : MonoBehaviour
 {
     public ActiveItem act;
     public GameObject inventory;
+    public PlayerMotivation motiv;
     private bool inventoryOpen;
     public List<Item> items;
     public int itemsMaxIndex;
@@ -13,6 +14,7 @@ public class InventoryScript : MonoBehaviour
     public string selectedItemName;
     void Start()
     {
+        motiv = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         inventory.SetActive(false);
         inventoryOpen = false;
     }
@@ -53,7 +55,7 @@ public class InventoryScript : MonoBehaviour
 
         } // scroll down
         itemsMaxIndex = items.Count - 1;
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             RemoveConsumableFromInventory(selectedItem);
         } //temp test for deleting consumable from inventory
@@ -69,6 +71,7 @@ public class InventoryScript : MonoBehaviour
         if (items[i].GetType() == typeof(ConsumableItem))
         {
             Debug.Log("Removing " + items[i].itemName + " from inventory");
+            motiv.AddMotivation(items[i].GetConsumableItem().health);
             items.RemoveAt(i);
             selectedItem = 0;
             act.ChangeHeldItem();

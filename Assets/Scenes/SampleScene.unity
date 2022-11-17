@@ -623,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   act: {fileID: 1476523459}
   inventory: {fileID: 1080337325}
+  motiv: {fileID: 0}
   items:
   - {fileID: 11400000, guid: 5513e77f37f3b6b428d5be20115c0126, type: 2}
   - {fileID: 11400000, guid: 13a4174c06c1d5c4e971023a447b61b4, type: 2}
@@ -2271,6 +2272,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266103705}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1411242652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8279162442798358045, guid: 0b5718954815ebd4a9f4d1271163dbdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7727371307057887301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1411242656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411242652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dedc802fd723b54e99fed01970d7fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMotivation: 0
+  currentMotivation: 0
 --- !u!1 &1476523457
 GameObject:
   m_ObjectHideFlags: 0
