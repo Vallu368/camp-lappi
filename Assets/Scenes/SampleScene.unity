@@ -2197,7 +2197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementBoundaryMax: {x: 20.5, y: 20.5, z: 20.5}
   MovementBoundaryMin: {x: -20.5, y: -20.5, z: -20.5}
-  forwardSpeed: 4
+  forwardSpeed: 10
+  turnSpeed: 100
 --- !u!1 &1678410935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +2845,11 @@ PrefabInstance:
     - target: {fileID: 8279162442798358045, guid: 0b5718954815ebd4a9f4d1271163dbdd,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279162442798358045, guid: 0b5718954815ebd4a9f4d1271163dbdd,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8692315479911592039, guid: 0b5718954815ebd4a9f4d1271163dbdd,
