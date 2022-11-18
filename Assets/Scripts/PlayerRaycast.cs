@@ -19,7 +19,6 @@ public class PlayerRaycast : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Transform cameraTransform = Camera.main.transform;
@@ -34,6 +33,14 @@ public class PlayerRaycast : MonoBehaviour
                     inv.AddItemToInventory(hit.transform.GetComponent<PickUpItem>().item);
                     hit.transform.GetComponent<PickUpItem>().taken = true;
 
+                }
+
+            }
+            if (hit.transform.tag == "KeyItem")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("susssss");
                 }
 
             }

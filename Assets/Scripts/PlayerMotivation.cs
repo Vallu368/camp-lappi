@@ -10,6 +10,7 @@ public class PlayerMotivation : MonoBehaviour
     void Start()
     {
         currentMotivation = maxMotivation;
+
     }
 
     // Update is called once per frame
