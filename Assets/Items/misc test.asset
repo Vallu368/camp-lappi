@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: misc test
   m_EditorClassIdentifier: 
   itemName: sus
+  itemIcon: {fileID: 21300000, guid: 8325d4ef0a6eb3d43952aff8a06d9f45, type: 3}
   itemPrefab: {fileID: 890388222331923565, guid: f1270e069c8bd4f4a890b4b9ea606b85,
     type: 3}
+  description: kompassi??

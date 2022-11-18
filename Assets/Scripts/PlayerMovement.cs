@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool canMove;
     public float moveSpeed;
     public float moveSpeedSlowed;
     public float moveSpeedVerySlow;
@@ -76,17 +77,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        rb.drag = 6f;
+        if (canMove)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+            rb.drag = 6f;
 
-        moveDirection = transform.forward * vertical + transform.right * horizontal;
-        moveDirection.y = 0;
+            moveDirection = transform.forward * vertical + transform.right * horizontal;
+            moveDirection.y = 0;
+        }
 
     }
     private void FixedUpdate()
     {
-        rb.AddForce(moveDirection.normalized * currentSpeed * multiplier, ForceMode.Acceleration);
+        if (canMove)
+        {
+            rb.AddForce(moveDirection.normalized * currentSpeed * multiplier, ForceMode.Acceleration);
+
+        }
     }
     
 

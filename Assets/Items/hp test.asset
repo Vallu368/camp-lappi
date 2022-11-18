@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: hp test
   m_EditorClassIdentifier: 
   itemName: hp
+  itemIcon: {fileID: 21300000, guid: 93e8dd60d7a92674c8a8bfe58cdc27c9, type: 3}
   itemPrefab: {fileID: 890388222331923565, guid: 17297a7e00ff9124da73b9a4b292c626,
     type: 3}
+  description: nom nom nom
+  health: 35

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Snow
   - test
+  - Item
+  - KeyItem
   layers:
   - Default
   - TransparentFX
