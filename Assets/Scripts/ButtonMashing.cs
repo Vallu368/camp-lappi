@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ButtonMashing : MonoBehaviour
 {
-    public float mashDelay = 0.5f;
+    public float mashDelay = 1f;
+    public float initialMashDelay = 5f;
     public float mash;
     private bool pressed;
     bool started;
+    private bool mashing;
+    public bool mashingFailed = false;
     void Start()
     {
         mash = mashDelay;
@@ -33,19 +36,29 @@ public class ButtonMashing : MonoBehaviour
             {
                 Debug.Log("mashing failed");
                 started = false;
+                mashingFailed = true;
             }
         }
     }
     public void StartButtonMash()
     {
-        started = true;
-        Debug.Log("mashing started)");
-        mash = mashDelay;
+        if (!mashingFailed)
+        {
+
+            if (!mashing)
+            {
+                started = true;
+                mash = initialMashDelay;
+                mashing = true;
+            }
+        }
+        else Debug.Log("ded");
 
     }
     public void StopButtonMash()
     {
         started = false;
+        mashing = false;
         mash = mashDelay;
     }
 }

@@ -18,6 +18,7 @@ public class PlayerMotivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         hpText = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
         hpText.text = currentMotivation.ToString();
         if (currentMotivation > maxMotivation)
