@@ -34,6 +34,7 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem7;
     void Start()
     {
+        act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
         motiv = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         movement = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
         keyItemSlot1 = GameObject.Find("KeyItemSlot1");
