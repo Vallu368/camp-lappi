@@ -9,6 +9,7 @@ public class ActiveItem : MonoBehaviour
         
     void Start()
     {
+        inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         ChangeHeldItem();
     }
 

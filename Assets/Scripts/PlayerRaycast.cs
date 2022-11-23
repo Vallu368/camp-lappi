@@ -40,10 +40,36 @@ public class PlayerRaycast : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("susssss");
+                    if (hit.transform.GetComponent<PickUpItem>().isKeyitem == false)
+                    {
+                        Debug.Log("Not setup as keyitem in pickupitem script");
+                    }
+                    if (hit.transform.GetComponent<PickUpItem>().isKeyitem)
+                    {
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 1)
+                        {
+                            Debug.Log("key item 1 added to inventory");
+                            inv.keyItem1 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 2)
+                        {
+                            Debug.Log("key item 2 added to inventory");
+                            inv.keyItem2 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                    }
                 }
 
             }
+            if (hit.transform.tag == "test") //using keyitems on camp or whatever
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.transform.GetComponent<UseKeyItem>().UseItem();
+                }
+
+                }
         }
 
 

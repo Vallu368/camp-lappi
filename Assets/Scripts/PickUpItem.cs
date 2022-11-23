@@ -6,6 +6,8 @@ public class PickUpItem : MonoBehaviour
 {
     public bool taken = false;
     public Item item;
+    public bool isKeyitem;
+    public int keyItemNumber;
     void Start()
     {
         

@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        canMove = true;
         Cursor.lockState = CursorLockMode.Locked; 
         rb.freezeRotation = true;
 

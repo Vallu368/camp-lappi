@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMotivation : MonoBehaviour
 {
     public float maxMotivation;
     public float currentMotivation;
+    public TextMeshProUGUI hpText;
     void Start()
     {
         currentMotivation = maxMotivation;
@@ -16,6 +18,8 @@ public class PlayerMotivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hpText = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
+        hpText.text = currentMotivation.ToString();
         if (currentMotivation > maxMotivation)
         {
             Debug.Log("motivation over " + maxMotivation);

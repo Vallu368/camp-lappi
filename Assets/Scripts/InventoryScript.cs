@@ -18,10 +18,32 @@ public class InventoryScript : MonoBehaviour
     public int itemsMaxIndex;
     public int selectedItem;
     private int i;
+    public GameObject keyItemSlot1;
+    public GameObject keyItemSlot2;
+    public GameObject keyItemSlot3;
+    public GameObject keyItemSlot4;
+    public GameObject keyItemSlot5;
+    public GameObject keyItemSlot6;
+    public GameObject keyItemSlot7;
+    public bool keyItem1;
+    public bool keyItem2;
+    public bool keyItem3;
+    public bool keyItem4;
+    public bool keyItem5;
+    public bool keyItem6;
+    public bool keyItem7;
     void Start()
     {
         motiv = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         movement = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
+        keyItemSlot1 = GameObject.Find("KeyItemSlot1");
+        keyItemSlot2 = GameObject.Find("KeyItemSlot2");
+        keyItemSlot3 = GameObject.Find("KeyItemSlot3");
+        keyItemSlot4 = GameObject.Find("KeyItemSlot4");
+        keyItemSlot5 = GameObject.Find("KeyItemSlot5");
+        keyItemSlot6 = GameObject.Find("KeyItemSlot6");
+        keyItemSlot7 = GameObject.Find("KeyItemSlot7");
+
         inventory.SetActive(false);
         inventoryOpen = false;
         slots = new GameObject[slotHolder.transform.childCount];
@@ -30,6 +52,13 @@ public class InventoryScript : MonoBehaviour
         Debug.Log(slotHolder.transform.childCount);
         Debug.Log(slots.Length);
         RefreshUI();
+        keyItemSlot1.SetActive(false);
+        keyItemSlot2.SetActive(false);
+        keyItemSlot3.SetActive(false);
+        keyItemSlot4.SetActive(false);
+        keyItemSlot5.SetActive(false);
+        keyItemSlot6.SetActive(false);
+        keyItemSlot7.SetActive(false);
 
     }
 
@@ -88,6 +117,14 @@ public class InventoryScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             movement.canMove = true;
         }
+        if (keyItem1)
+        {
+            keyItemSlot1.SetActive(true);
+        }
+        if (keyItem2)
+        {
+            keyItemSlot2.SetActive(true);
+        }
 
 
     }
@@ -134,4 +171,5 @@ public class InventoryScript : MonoBehaviour
         }
         else Debug.Log("Can't delete, not consumable");
     }
+
 }
