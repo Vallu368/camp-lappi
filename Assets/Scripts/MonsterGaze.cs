@@ -17,11 +17,15 @@ public class MonsterGaze : MonoBehaviour
 
 	void Update() 
 	{
-		HeadLight.color = Color.Lerp(LightColorRoaming, LightColorAlerted, Mathf.Clamp((eyeContactFactor-0.8f)*4f, 0f, 1f));
+		HeadLight.color = Color.Lerp(LightColorRoaming, LightColorAlerted, Mathf.Clamp((eyeContactFactor-0.8f)*4f, 0f, 1f)); //Magic numbers to tint head light color when looking at player
+		if(eyeContactFactor > 0.85f)
+		{
+			Debug.Log($"<color=cyan>Monster sees you!!</color>");
+		}
 	}
 	void FixedUpdate()
 	{
-		eyeContactFactor = Vector3.Dot(transform.forward.normalized, (playerTransform.position - transform.position).normalized);
+		eyeContactFactor = Vector3.Dot(transform.forward.normalized, (playerTransform.position - transform.position).normalized); //Compare alignment of direction forward and direction to player
 		Debug.DrawRay(transform.position, transform.forward*1f, Color.cyan, Time.fixedDeltaTime);
 		Debug.DrawRay(transform.position, (playerTransform.position - transform.position).normalized, Color.red, Time.fixedDeltaTime);
 

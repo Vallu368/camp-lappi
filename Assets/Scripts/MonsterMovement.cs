@@ -21,6 +21,9 @@ public class MonsterMovement : MonoBehaviour
 	[SerializeField] float BrakeTime;
 	[Tooltip("How slow to move when braking, between 0 and 1")]
 	[SerializeField] float BrakeStrength;
+	[Tooltip("Distance to player within which roaming pursuit does not occur, for fairness")]
+	[SerializeField] float PursueSafeDistance;
+	public bool Pursuing; //Directs monster towards player location, modified by MonsterMind
 	float brakeFactor; //Reducing multiplier added to movement
 	float brakeVelocity; 
 	float brakeTarget = 1f; //Desired brake factor
@@ -48,14 +51,17 @@ public class MonsterMovement : MonoBehaviour
 		if (transform.position.x > MovementBoundaryMax.x	//East
 		|| transform.position.x < MovementBoundaryMin.x		//West
 		|| transform.position.z > MovementBoundaryMax.z		//North
-		|| transform.position.z < MovementBoundaryMin.z)	//South
-		{	//If so, rotate towards player
-			Vector3 relativePos = TargetPlayer();
-			Quaternion desiredRotation = Quaternion.LookRotation(relativePos, Vector3.up); //Convert the vector to quaternion
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, TurnSpeed * Time.deltaTime); //Rotate
-			brakeTarget = BrakeStrength; //Reduce speed gradually
+		|| transform.position.z < MovementBoundaryMin.z)    //South
+        {   //If so, rotate towards player and slow down
+            RotateTowardsPlayer();
+        	brakeTarget = BrakeStrength; //Reduce speed gradually
+        }
+		else if(Pursuing && MonsterMind.DistanceToPlayer > PursueSafeDistance) //MonsterMind decides when to Pursue, but we do it only when outside the Safe Distance
+		{
+			RotateTowardsPlayer();
+			//Debug.Log($"<color=cyan>Pursuing at distance of {MonsterMind.DistanceToPlayer}</color>");
 		}
-		else //Otherwise veer to add unpredictably whenever not doing the U-turn
+        else //Otherwise veer to add unpredictably whenever not doing the U-turn
 		{
 			brakeTarget = 1f;
 			if (veerCounter >= 0f) //While counter is running 
@@ -70,8 +76,16 @@ public class MonsterMovement : MonoBehaviour
 			}
 		}
 	}
+	
 
-	Vector3 TargetPlayer()
+    private void RotateTowardsPlayer()
+    {
+        Vector3 relativePos = TargetPlayer();
+        Quaternion desiredRotation = Quaternion.LookRotation(relativePos, Vector3.up); //Convert the vector to quaternion
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, TurnSpeed * Time.deltaTime); //Rotate
+    }
+
+    Vector3 TargetPlayer()
 	{	
 		Vector3 playerFlatPosition = new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z); //Use own Y position instead as target's, to not move up or down
 		Vector3 relativePos = playerFlatPosition - transform.position; //Create a vector pointing to target from own position
