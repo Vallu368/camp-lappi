@@ -8,6 +8,7 @@ public class MonsterGaze : MonoBehaviour
 	[SerializeField] Light HeadLight;
 	[SerializeField] Color LightColorRoaming;
 	[SerializeField] Color LightColorAlerted;
+	[SerializeField] float gazeSuspicion;
 	float eyeContactFactor;
 	Transform playerTransform;
 	void Start()
@@ -18,16 +19,22 @@ public class MonsterGaze : MonoBehaviour
 	void Update() 
 	{
 		HeadLight.color = Color.Lerp(LightColorRoaming, LightColorAlerted, Mathf.Clamp((eyeContactFactor-0.8f)*4f, 0f, 1f)); //Magic numbers to tint head light color when looking at player
-		if(eyeContactFactor > 0.85f)
-		{
-			Debug.Log($"<color=cyan>Monster sees you!!</color>");
-		}
+		
 	}
 	void FixedUpdate()
 	{
 		eyeContactFactor = Vector3.Dot(transform.forward.normalized, (playerTransform.position - transform.position).normalized); //Compare alignment of direction forward and direction to player
-		Debug.DrawRay(transform.position, transform.forward*1f, Color.cyan, Time.fixedDeltaTime);
-		Debug.DrawRay(transform.position, (playerTransform.position - transform.position).normalized, Color.red, Time.fixedDeltaTime);
+		if(eyeContactFactor > 0.85f)
+		{
+			Debug.DrawRay(transform.position, (playerTransform.position - transform.position).normalized*10f, Color.red, Time.fixedDeltaTime);
+			Debug.Log($"<color=cyan>Monster gets suspicious...</color>");
+			MonsterMind.GetSuspicious(gazeSuspicion);
+		}
 
+	}
+	void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawRay(transform.position, transform.forward*10f);
 	}
 }
