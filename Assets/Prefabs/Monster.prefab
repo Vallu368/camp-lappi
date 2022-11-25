@@ -988,6 +988,8 @@ MonoBehaviour:
   VeerPhaseLength: 2
   BrakeTime: 1
   BrakeStrength: 0.4
+  PursueSafeDistance: 40
+  Pursuing: 0
 --- !u!114 &4939601523937369209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,7 +1005,11 @@ MonoBehaviour:
   MonsterMovementScript: {fileID: 4939601523937369208}
   MonsterGazeScript: {fileID: 4939601524269948513}
   _monsterState: 1
-  playerTransform: {fileID: 0}
+  PursueTimeMin: 2
+  PursueTimeMax: 4
+  PursueDelayMin: 4
+  PursueDelayMax: 12
+  PursueDifficultyMultiplier: 1
 --- !u!1 &4939601524269948519
 GameObject:
   m_ObjectHideFlags: 0
