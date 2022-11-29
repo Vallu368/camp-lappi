@@ -52,6 +52,9 @@ Material:
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
+    - _VignetteIntensity: 0.8
+    - _VignetteRadiusPower: 13.73
+    - _VoronoiPower: 2
     - _VoronoiScale: 7
     - _VoronoiSpeed: 1
     - _VoronoiSpeed_1: 0
