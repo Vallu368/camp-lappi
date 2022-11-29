@@ -1061,6 +1061,7 @@ MonoBehaviour:
   HeadLight: {fileID: 4939601524444508367}
   LightColorRoaming: {r: 0.6, g: 0.94509804, b: 1, a: 1}
   LightColorAlerted: {r: 1, g: 0.25943398, b: 0.40270177, a: 1}
+  gazeSuspicion: 1.5
 --- !u!95 &4939601524269948514
 Animator:
   serializedVersion: 4
