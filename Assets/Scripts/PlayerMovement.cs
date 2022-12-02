@@ -16,12 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public bool inHeavySnow = false;
     public bool crouching = false;
     public bool inFearAura = false;
+    public AudioSource walkingSound;
     float horizontal;
     float vertical;
     public Rigidbody rb;
     public GameObject vcamFollow;
     public GameObject vcamFollowCrouch;
     public CinemachineVirtualCamera cam;
+    PlayerAttacked attacked;
+    PlayerMotivation motiv;
 
 
     Vector3 moveDirection;
@@ -31,12 +34,23 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
         Cursor.lockState = CursorLockMode.Locked; 
         rb.freezeRotation = true;
+        attacked = this.GetComponentInParent<PlayerAttacked>();
+        motiv = this.GetComponentInParent<PlayerMotivation>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (motiv.currentMotivation <= 0)
+        {
+            canMove = false;
+        }
+        if (attacked.beingAttacked)
+        {
+            canMove = false;
+            rb.velocity = Vector3.zero;
+        }
 
         Movement();
         if (inHeavySnow || crouching || inFearAura)
@@ -60,7 +74,12 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed = moveSpeedShitMyPantSlow;
         }
-        
+
+        if (attacked.beingAttacked)
+        {
+            cam.Follow = GameObject.Find("Monster").transform;
+        }
+        else cam.Follow = vcamFollow.transform;
 
         if (crouching)
         {
@@ -79,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
+           // walkingSound.Play();
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
             rb.drag = 6f;

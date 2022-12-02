@@ -9,9 +9,11 @@ public class UseKeyItem : MonoBehaviour
     public GameObject keyItemObject;
     public int keyItemNeededID;
     public bool keyItemUsed;
+    FadeToBlack fade;
     void Start()
     {
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
+        fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         keyItemObject.SetActive(false);
     }
 
@@ -28,10 +30,8 @@ public class UseKeyItem : MonoBehaviour
             {
                 if (inv.keyItem1)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+
+                    StartCoroutine(UseKey());
                 }
                 else Debug.Log("need keyItem1");
             }
@@ -49,5 +49,18 @@ public class UseKeyItem : MonoBehaviour
             
             
         }
+    }
+
+    IEnumerator UseKey()
+    {
+        StartCoroutine(fade.FadeIn(3f));
+        yield return new WaitForSeconds(3);
+        //sounds
+        noKeyItem.SetActive(false);
+        keyItemObject.SetActive(true);
+        keyItemUsed = true;
+        StartCoroutine(fade.FadeOut(3f));
+
+
     }
 }

@@ -21,6 +21,11 @@ public class TouchingSnow : MonoBehaviour
             Debug.Log("slow");
             move.inHeavySnow = true;
         }
+        if (collision.gameObject.name == "ColdAura")
+        {
+            Debug.Log("aura");
+            move.inFearAura = true;
+        }
     }
     private void OnTriggerExit(Collider collision)
     {
@@ -28,6 +33,12 @@ public class TouchingSnow : MonoBehaviour
         {
             Debug.Log("not slowed");
             move.inHeavySnow = false;
+        }
+
+        if (collision.gameObject.name == "ColdAura")
+        {
+            Debug.Log("left aura");
+            move.inFearAura = false;
         }
     }
     

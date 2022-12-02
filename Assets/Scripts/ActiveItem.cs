@@ -6,10 +6,12 @@ public class ActiveItem : MonoBehaviour
 {
     public GameObject currentHeldItem;
     public InventoryScript inv;
+    public Animator anim;
         
     void Start()
     {
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
+        anim = this.gameObject.GetComponentInParent<Animator>();
         ChangeHeldItem();
     }
 
@@ -17,6 +19,25 @@ public class ActiveItem : MonoBehaviour
     void Update()
     {
         currentHeldItem = this.gameObject.transform.GetChild(0).gameObject;
+        if (currentHeldItem.tag == "Compass")
+        {
+            anim.SetBool("CompassActive", true);
+        }
+        else
+        {
+            anim.SetBool("CompassActive", false);
+
+        }
+        if ((currentHeldItem.tag == "Item"))
+        {
+            anim.SetBool("OtherActive", true);
+
+        }
+        else
+        {
+            anim.SetBool("OtherActive", false);
+
+        }
 
     }
     public void InstantiateObject(GameObject gameObject)
@@ -24,11 +45,20 @@ public class ActiveItem : MonoBehaviour
 
         Instantiate(gameObject, transform);
     }
+    public IEnumerator ChangeItem()
+    {
+        anim.SetBool("Reset", true);
+        yield return new WaitForSeconds(0.1f);
+        ChangeHeldItem();
+        anim.SetBool("Reset", false);
+        yield return null;
+    }
 
     public void ChangeHeldItem() {
-
+        anim.SetBool("Reset", true);
         Destroy(currentHeldItem);
         InstantiateObject(inv.items[inv.selectedItem].itemPrefab);
+        
 
     }
 }

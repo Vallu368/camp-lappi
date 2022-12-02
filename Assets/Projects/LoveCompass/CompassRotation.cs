@@ -8,6 +8,10 @@ public class CompassRotation : MonoBehaviour
 
 	[SerializeField] Transform targetTransform;
 	Vector3 target;
+	private void Start()
+	{
+		targetTransform = GameObject.Find("CompassTarget").gameObject.transform;
+	}
 
 	void Update()
 	{

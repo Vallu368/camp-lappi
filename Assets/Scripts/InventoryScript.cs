@@ -32,6 +32,8 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem5;
     public bool keyItem6;
     public bool keyItem7;
+    public bool disabled;
+    [HideInInspector] public bool unlockCursor = false;
     void Start()
     {
         act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
@@ -66,7 +68,7 @@ public class InventoryScript : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !motiv.dead)
         {
             if (!inventoryOpen)
             {
@@ -79,25 +81,28 @@ public class InventoryScript : MonoBehaviour
                 inventoryOpen = false;
             }
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (!disabled)
         {
-            if (selectedItem != items.Count - 1)
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
-                selectedItem++;
-            }
-            else selectedItem = 0;
-            act.ChangeHeldItem();
-        } //scroll up
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            if (selectedItem != 0)
+                if (selectedItem != items.Count - 1)
+                {
+                    selectedItem++;
+                }
+                else selectedItem = 0;
+                StartCoroutine(act.ChangeItem());
+            } //scroll up
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
-                selectedItem = selectedItem - 1;
-            }
-            else selectedItem = itemsMaxIndex;
-            act.ChangeHeldItem();
+                if (selectedItem != 0)
+                {
+                    selectedItem = selectedItem - 1;
+                }
+                else selectedItem = itemsMaxIndex;
+                StartCoroutine(act.ChangeItem());
 
-        } // scroll down
+            } // scroll down
+        }
         itemsMaxIndex = items.Count - 1;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -107,7 +112,7 @@ public class InventoryScript : MonoBehaviour
 
             }
         } 
-        if (inventoryOpen)
+        if (inventoryOpen || unlockCursor)
         {
             Cursor.lockState = CursorLockMode.None;
             movement.canMove = false;

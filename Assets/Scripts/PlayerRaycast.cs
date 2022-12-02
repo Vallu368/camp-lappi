@@ -6,7 +6,7 @@ public class PlayerRaycast : MonoBehaviour
 {
     public float maxRange;
     RaycastHit hit;
-    public InventoryScript inv;
+   [HideInInspector] public InventoryScript inv;
     
 
 
