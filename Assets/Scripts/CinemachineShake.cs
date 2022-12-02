@@ -35,15 +35,14 @@ public class CinemachineShake : MonoBehaviour
         {
             if (!attack.beingAttacked)
             {
-                if (perlin.m_AmplitudeGain <= 2)
+                if (perlin.m_AmplitudeGain <= 1.1)
                 {
                     perlin.m_AmplitudeGain = 1;
                     perlin.m_FrequencyGain = 1;
                 }
             }
-            if (perlin.m_AmplitudeGain >= 2 )
+            if (perlin.m_AmplitudeGain >= 1.1 )
             {
-                Debug.Log("smooth this shit");
                 float target = 1.0f;
                 float current = perlin.m_AmplitudeGain;
 

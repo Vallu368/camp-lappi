@@ -11,9 +11,15 @@ public class ButtonMashing : MonoBehaviour
     bool started;
     private bool mashing;
     public bool mashingFailed = false;
+    public bool hasKnife = false;
+    PlayerMotivation motiv;
+    InventoryScript inv;
+    
     void Start()
     {
         mash = mashDelay;
+        motiv = this.GetComponent<PlayerMotivation>();
+        
     }
 
     // Update is called once per frame
@@ -32,11 +38,12 @@ public class ButtonMashing : MonoBehaviour
             {
                 pressed = false;
             }
-            if (mash <= 0)
+            if (mash <= 0.1)
             {
                 Debug.Log("mashing failed");
                 started = false;
                 mashingFailed = true;
+                motiv.currentMotivation = 0;
             }
         }
     }
@@ -52,7 +59,6 @@ public class ButtonMashing : MonoBehaviour
                 mashing = true;
             }
         }
-        else Debug.Log("ded");
 
     }
     public void StopButtonMash()

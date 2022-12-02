@@ -6,12 +6,24 @@ using UnityEngine;
 
 public class PlayerMotivation : MonoBehaviour
 {
+    public GameObject restart;
     public float maxMotivation;
     public float currentMotivation;
     public TextMeshProUGUI hpText;
+    private InventoryScript inv;
+    FadeToBlack fade;
+    public bool dead;
+    public AudioSource takeDamage;
+    public AudioSource die;
+    private bool dyingSoundPlayed;
     void Start()
     {
         currentMotivation = maxMotivation;
+        fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+        restart = GameObject.Find("Restart");
+        inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
+        restart.SetActive(false);
+
 
     }
 
@@ -29,9 +41,28 @@ public class PlayerMotivation : MonoBehaviour
 
         if (currentMotivation <= 0)
         {
-            Debug.Log("ei pyke");
+            if (!dead)
+            {
+                StartCoroutine(Death());
+                
+
+            }
         }
     }
+    IEnumerator Death()
+    {
+        die.Play();
+        dead = true;
+        Debug.Log("yay death");
+        StartCoroutine(fade.FadeIn(3f));
+        yield return new WaitForSeconds(5f);
+        inv.unlockCursor = true;
+        restart.SetActive(true);
+            
+        
+    }
+
+
     public void AddMotivation(float amountToAdd)
     {
         currentMotivation = currentMotivation + amountToAdd;
@@ -39,8 +70,13 @@ public class PlayerMotivation : MonoBehaviour
     }
     public void LowerMotivation(float amountToRemove)
     {
-        currentMotivation = currentMotivation - amountToRemove;
-        Debug.Log("removed " + amountToRemove + " motivation, current motivation is " + currentMotivation);
+
+        if (currentMotivation > 0)
+        {
+            currentMotivation = currentMotivation - amountToRemove;
+            Debug.Log("removed " + amountToRemove + " motivation, current motivation is " + currentMotivation);
+            takeDamage.Play();
+        }
 
     }
 }

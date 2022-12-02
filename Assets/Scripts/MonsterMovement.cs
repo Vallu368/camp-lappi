@@ -41,9 +41,10 @@ public class MonsterMovement : MonoBehaviour
 	{
 		//brakeFactor = Mathf.MoveTowards(brakeFactor, brakeTarget, BrakeSpeed * Time.deltaTime); //
 		brakeFactor = Mathf.SmoothDamp(brakeFactor, brakeTarget, ref brakeVelocity, BrakeTime);
-	}
+	
+    }
 
-	public void Roam() //Move forward, turn towards player when reaching boundary
+    public void Roam() //Move forward, turn towards player when reaching boundary
 	{
 		transform.Translate(Vector3.forward * ForwardSpeed * brakeFactor * Time.deltaTime); //Move forward
 
@@ -76,6 +77,19 @@ public class MonsterMovement : MonoBehaviour
 			}
 		}
 	}
+	public void Hunt()
+	{
+		RotateTowardsPlayer();
+		if (MonsterMind.DistanceToPlayer > 2)
+		{
+            transform.Translate(Vector3.forward * ForwardSpeed * Time.deltaTime);
+
+        }
+
+
+
+
+    }
 	
 
     private void RotateTowardsPlayer()

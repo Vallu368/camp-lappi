@@ -10,24 +10,35 @@ public class PlayerAttacked : MonoBehaviour
     private TextMeshProUGUI text;
     private PlayerMotivation motivation;
     private ButtonMashing mash;
-    public int attacked;
+    private PlayerMovement playerMov;
+    private MonsterMind monsterMind;
+    private InventoryScript inv;
+    private ActiveItem act;
+    private Animator anim;
+
+
+
+    int attacked;
     private int nextUpdate = 1;
 
     void Start()
     {
+        anim = this.gameObject.GetComponentInChildren<Animator>();
+        monsterMind = GameObject.Find("Monster").GetComponent<MonsterMind>();
         text = GameObject.Find("MashText").GetComponent<TextMeshProUGUI>();
         text.enabled = false;
         motivation = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         mash = GameObject.Find("Player").GetComponent<ButtonMashing>();
+        playerMov = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
+        inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
+        act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            beingAttacked = true;
-        }
+
         if (Time.time >= nextUpdate)
         {
     
@@ -38,20 +49,32 @@ public class PlayerAttacked : MonoBehaviour
         {
             mash.StartButtonMash();
             text.enabled = true;
+            playerMov.canMove = false;
+            inv.selectedItem = 0;
+            act.ChangeHeldItem();
+            anim.SetBool("Attacked", true);
+            inv.disabled = true;
         }
         if (!beingAttacked)
         {
             text.enabled = false;
             mash.StopButtonMash();
+            playerMov.canMove = true;
+            inv.disabled = false;
+            anim.SetBool("Attacked", false);
+
         }
         if (attacked >= 5)
         {
             beingAttacked = false;
+            attacked = 0;
+            monsterMind.suspicion = 0;
 
         }
         if (mash.mashingFailed)
         {
             beingAttacked = false;
+            attacked = 0;
         }
 
         }
