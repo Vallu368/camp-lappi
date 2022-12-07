@@ -3537,6 +3537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa v1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb5304e0892c28a4fb28df4083729ac4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1163286223364288525, guid: fb5304e0892c28a4fb28df4083729ac4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5403,6 +5408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6022,7 +6032,7 @@ PrefabInstance:
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 67
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
@@ -6087,6 +6097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -11937,6 +11952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -12030,7 +12050,7 @@ PrefabInstance:
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 71
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -12939,6 +12959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -18147,7 +18172,7 @@ PrefabInstance:
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 68
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
@@ -18468,6 +18493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -19416,6 +19446,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -19823,7 +19858,7 @@ PrefabInstance:
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
       propertyPath: m_RootOrder
-      value: 74
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
@@ -20170,6 +20205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -21374,6 +21414,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -21876,6 +21921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -23153,6 +23203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa v1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb5304e0892c28a4fb28df4083729ac4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1163286223364288525, guid: fb5304e0892c28a4fb28df4083729ac4,
         type: 3}
@@ -31232,7 +31287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &691038162
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -31418,6 +31473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -34358,6 +34418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -36087,6 +36152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -37442,6 +37512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -37525,6 +37600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -40786,6 +40866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -41854,6 +41939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -44235,10 +44325,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 76
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -49738,6 +49833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -85402,7 +85502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1260182485
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -88513,7 +88613,7 @@ PrefabInstance:
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 75
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 8831427952098191288, guid: b32a87a36658f0c41bff02ca121947e1,
         type: 3}
@@ -88941,6 +89041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lumikasa iso (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
@@ -92214,6 +92319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa v1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb5304e0892c28a4fb28df4083729ac4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1163286223364288525, guid: fb5304e0892c28a4fb28df4083729ac4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -93548,6 +93658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LumikasaLowpoly_Kapea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616927700683669508, guid: 8d94327cac4f6df41ba75b4657b37d15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106465824755489470, guid: 8d94327cac4f6df41ba75b4657b37d15,
         type: 3}
@@ -100628,7 +100743,7 @@ PrefabInstance:
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
       propertyPath: m_RootOrder
-      value: 70
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
@@ -108041,7 +108156,7 @@ PrefabInstance:
     - target: {fileID: 2682356485609934085, guid: 818478f98cb41884b9c57b7543ca5ac0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 73
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 2682356485609934085, guid: 818478f98cb41884b9c57b7543ca5ac0,
         type: 3}
@@ -110795,7 +110910,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45284
+  m_Name: pb_Mesh491062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -116019,7 +116134,7 @@ PrefabInstance:
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
       propertyPath: m_RootOrder
-      value: 69
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
@@ -118283,7 +118398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2024521936
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -118579,6 +118694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "kent\xE4n_pohja_thicc2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50e2a1b93371c4d4989c3e2af3b935cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e2a1b93371c4d4989c3e2af3b935cd, type: 3}
@@ -119436,7 +119556,7 @@ PrefabInstance:
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 4025498809350262149, guid: 03cdf9c6c02f7b7429a3ce0af71ac307,
         type: 3}
@@ -119654,6 +119774,84 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2062776429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062776432}
+  - component: {fileID: 2062776431}
+  - component: {fileID: 2062776430}
+  m_Layer: 0
+  m_Name: "Kent\xE4nPohja_Lopullinen"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!154 &2062776430
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062776429}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 582df89aeacf0254bba101a0a58185ac, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &2062776431
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062776429}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 582df89aeacf0254bba101a0a58185ac, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &2062776432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062776429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -220.8, y: 0, z: -114.1}
+  m_LocalScale: {x: 0.05, y: 0.22, z: 0.04}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 172
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2075510534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120872,6 +121070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lumikasa iso (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6348499060028007739, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7285849594403353720, guid: 26bddc3cb5d2d9a4fb86d55fbebc7dd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -121955,7 +122158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45448
+  m_Name: pb_Mesh491232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
