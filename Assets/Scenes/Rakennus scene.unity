@@ -88327,7 +88327,7 @@ PrefabInstance:
     - target: {fileID: 2523278242037528090, guid: d0800889a174e01489f4afc84289abf3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2523278242037528094, guid: d0800889a174e01489f4afc84289abf3,
         type: 3}
@@ -109581,6 +109581,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406ea35663778914b9a140492e7b701a, type: 3}
+--- !u!82 &1835982063 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 142538987, guid: 24e7d840b87684b4585e064252657783,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998125178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845949750
 GameObject:
   m_ObjectHideFlags: 0
@@ -116540,6 +116546,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9140146153915919659, guid: 24e7d840b87684b4585e064252657783,
+        type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 1835982063}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e7d840b87684b4585e064252657783, type: 3}
 --- !u!1001 &1998271058
