@@ -114740,6 +114740,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1607634276, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607634276, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8254717
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607634276, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_Color.g
+      value: 0.88916254
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607634276, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_Intensity
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2871489352746416458, guid: 24e7d840b87684b4585e064252657783,
         type: 3}
       propertyPath: m_RootOrder
@@ -114818,6 +114834,11 @@ PrefabInstance:
     - target: {fileID: 6825593938255783677, guid: 24e7d840b87684b4585e064252657783,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879488925080297875, guid: 24e7d840b87684b4585e064252657783,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
