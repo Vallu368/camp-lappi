@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524287333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2548,6 +2548,8 @@ MonoBehaviour:
   keyItem6: 0
   keyItem7: 0
   disabled: 0
+  hasStick: 0
+  hasKnife: 0
   unlockCursor: 0
 --- !u!114 &1684902818
 MonoBehaviour:
