@@ -15,10 +15,12 @@ public class PlayerAttacked : MonoBehaviour
     private InventoryScript inv;
     private ActiveItem act;
     private Animator anim;
+    public int playerWeapon; //0 no weapons 1 is stick, 2 is knife
+    public float attackedTimer;
 
 
 
-    int attacked;
+    public int attacked;
     private int nextUpdate = 1;
 
     void Start()
@@ -38,7 +40,10 @@ public class PlayerAttacked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerWeapon == 0)
+        {
+            attackedTimer = 5f;    
+        }
         if (Time.time >= nextUpdate)
         {
     
@@ -47,6 +52,7 @@ public class PlayerAttacked : MonoBehaviour
         }
         if (beingAttacked)
         {
+            playerMov.enabled = false;
             mash.StartButtonMash();
             text.enabled = true;
             playerMov.canMove = false;
@@ -54,9 +60,11 @@ public class PlayerAttacked : MonoBehaviour
             act.ChangeHeldItem();
             anim.SetBool("Attacked", true);
             inv.disabled = true;
+            monsterMind.suspicion = 100;
         }
         if (!beingAttacked)
         {
+            playerMov.enabled = true;
             text.enabled = false;
             mash.StopButtonMash();
             playerMov.canMove = true;
@@ -64,15 +72,18 @@ public class PlayerAttacked : MonoBehaviour
             anim.SetBool("Attacked", false);
 
         }
-        if (attacked >= 5)
+        if (attacked >= attackedTimer)
         {
             beingAttacked = false;
             attacked = 0;
             monsterMind.suspicion = 0;
+            Debug.Log("amongus");
 
         }
         if (mash.mashingFailed)
         {
+            
+            playerMov.enabled = true;
             beingAttacked = false;
             attacked = 0;
         }

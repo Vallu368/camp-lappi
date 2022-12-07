@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    public GameObject restart;
-    public GameObject spawnPoint;
-    public GameObject player;
-    public PlayerAttacked attack;
-    public PlayerMotivation motiv;
-    public PlayerMovement move;
-    public FadeToBlack fade;
-    public ButtonMashing mash;
-    public InventoryScript inv;
+    GameObject restart;
+    GameObject spawnPoint;
+    GameObject player;
+    PlayerAttacked attack;
+    PlayerMotivation motiv;
+    PlayerMovement move;    
+    FadeToBlack fade;
+    ButtonMashing mash;
+    InventoryScript inv;
+    MonsterMind monsterMind;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,12 @@ public class PlayerRespawn : MonoBehaviour
         move = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
         fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
+        monsterMind = GameObject.Find("Monster").GetComponent<MonsterMind>();
+        
+        if (restart && motiv.restart != null)
+        {
+            restart.SetActive(false);
+        }
 
     }
 
@@ -33,7 +40,7 @@ public class PlayerRespawn : MonoBehaviour
     {
      if (Input.GetKeyDown(KeyCode.U))
         {
-            MovePlayerToSpawn();
+            Continue();
         }   
     }
     public void Continue()
@@ -50,6 +57,9 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (motiv.dead)
         {
+            monsterMind.suspicion = 0;
+            attack.beingAttacked = false;
+            move.enabled = true;    
             Debug.Log("yee");
             motiv.currentMotivation = 100;
             motiv.dead = false;

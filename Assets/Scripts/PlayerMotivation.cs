@@ -22,7 +22,6 @@ public class PlayerMotivation : MonoBehaviour
         fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         restart = GameObject.Find("Restart");
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
-        restart.SetActive(false);
 
 
     }

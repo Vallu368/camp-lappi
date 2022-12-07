@@ -33,6 +33,8 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem6;
     public bool keyItem7;
     public bool disabled;
+    public bool hasStick;
+    public bool hasKnife;
     [HideInInspector] public bool unlockCursor = false;
     void Start()
     {

@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (attacked.beingAttacked)
         {
             canMove = false;
+            
             rb.velocity = Vector3.zero;
         }
 

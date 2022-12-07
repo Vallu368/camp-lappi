@@ -13,7 +13,7 @@ public class ButtonMashing : MonoBehaviour
     public bool mashingFailed = false;
     public bool hasKnife = false;
     PlayerMotivation motiv;
-    InventoryScript inv;
+    InventoryScript inv;    
     
     void Start()
     {
