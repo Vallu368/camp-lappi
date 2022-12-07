@@ -8,9 +8,13 @@ public class PickUpItem : MonoBehaviour
     public Item item;
     public bool isKeyitem;
     public int keyItemNumber;
+    public bool played;
+    public AudioSource audio;
+    public GameObject mesh;
     void Start()
     {
-        
+        mesh = this.transform.GetChild(0).gameObject;
+        audio = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -18,7 +22,15 @@ public class PickUpItem : MonoBehaviour
     {
         if (taken)
         {
-            Destroy(this.gameObject);
+            if (audio != null)
+            {
+                if (!audio.isPlaying && !played)
+                {
+                    audio.Play();
+                    played = true;
+                }
+            }
+            mesh.SetActive(false);
         }
     }
 }

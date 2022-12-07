@@ -13,11 +13,13 @@ public class InventoryScript : MonoBehaviour
     public PlayerMovement movement;
     private bool inventoryOpen;
     public List<Item> items;
+    public GameObject addedItemText;
     private GameObject[] slots;
     public GameObject slotHolder;
     public int itemsMaxIndex;
     public int selectedItem;
     private int i;
+    AudioSource audio;
     public GameObject keyItemSlot1;
     public GameObject keyItemSlot2;
     public GameObject keyItemSlot3;
@@ -38,6 +40,8 @@ public class InventoryScript : MonoBehaviour
     [HideInInspector] public bool unlockCursor = false;
     void Start()
     {
+        addedItemText = GameObject.Find("AddedItem");
+        audio = this.GetComponent<AudioSource>();
         act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
         motiv = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         movement = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
@@ -72,6 +76,7 @@ public class InventoryScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && !motiv.dead)
         {
+            audio.Play();
             if (!inventoryOpen)
             {
                 inventory.SetActive(true);
@@ -161,8 +166,18 @@ public class InventoryScript : MonoBehaviour
         items.Add(item);
         Debug.Log("Added " + item.itemName + " to inventory");
         RefreshUI();
+        StartCoroutine(AddedItemText(item.itemName));
 
 
+    }
+    public IEnumerator AddedItemText(string itemName)
+    {
+        addedItemText.SetActive(true);
+        TextMeshProUGUI text = addedItemText.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        text.text = itemName;
+
+        yield return new WaitForSeconds(2f);
+        addedItemText.SetActive(false);
     }
     public  void RemoveConsumableFromInventory(int i)
     {
