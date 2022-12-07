@@ -27,6 +27,7 @@ public class PlayerRespawn : MonoBehaviour
         fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         monsterMind = GameObject.Find("Monster").GetComponent<MonsterMind>();
+        restart.SetActive(false);
         
         if (restart && motiv.restart != null)
         {

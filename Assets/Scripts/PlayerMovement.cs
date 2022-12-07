@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        canMove = true;
         Cursor.lockState = CursorLockMode.Locked; 
         rb.freezeRotation = true;
         attacked = this.GetComponentInParent<PlayerAttacked>();
@@ -42,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.velocity.x != 0)
+        {
+            if (!walkingSound.isPlaying)
+            {
+                walkingSound.Play();
+            }
+        }
+        else walkingSound.Stop();
+
         if (motiv.currentMotivation <= 0)
         {
             canMove = false;
@@ -99,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-           // walkingSound.Play();
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
             rb.drag = 6f;
@@ -107,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = transform.forward * vertical + transform.right * horizontal;
             moveDirection.y = 0;
         }
+        
 
     }
     private void FixedUpdate()

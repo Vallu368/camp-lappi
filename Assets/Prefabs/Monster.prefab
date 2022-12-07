@@ -942,6 +942,7 @@ GameObject:
   - component: {fileID: 4939601523937369215}
   - component: {fileID: 4939601523937369208}
   - component: {fileID: 4939601523937369209}
+  - component: {fileID: 293761188}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -982,7 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementBoundaryMax: {x: 183.4, y: 20.5, z: 123.3}
   MovementBoundaryMin: {x: -202.5, y: 20.5, z: -100.5}
-  ForwardSpeed: 8
+  ForwardSpeed: 0
   TurnSpeed: 30
   VeerSpeed: 0.02
   VeerPhaseLength: 2
@@ -1004,12 +1005,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonsterMovementScript: {fileID: 4939601523937369208}
   MonsterGazeScript: {fileID: 4939601524269948513}
-  _monsterState: 1
+  _monsterState: 0
+  playerAttacked: {fileID: 0}
   PursueTimeMin: 2
   PursueTimeMax: 4
   PursueDelayMin: 4
   PursueDelayMax: 12
-  PursueDifficultyMultiplier: 1
+  PursueDifficultyMultiplier: 0.5
+  suspicion: 0
+--- !u!95 &293761188
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4939601523937369214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b74bbf056369f64a99ab202215d9c20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4939601524269948519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1085,9 @@ MonoBehaviour:
   LightColorRoaming: {r: 0.6, g: 0.94509804, b: 1, a: 1}
   LightColorAlerted: {r: 1, g: 0.25943398, b: 0.40270177, a: 1}
   gazeSuspicion: 1.5
+  obstructionLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &4939601524269948514
 Animator:
   serializedVersion: 4
