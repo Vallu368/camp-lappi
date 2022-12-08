@@ -40,9 +40,29 @@ public class PlayerAttacked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inv.hasStick)
+        {
+            playerWeapon = 1;
+        }
+        if (inv.hasKnife)
+        {
+            playerWeapon = 2;
+        }
+        if (inv.hasKnife && inv.hasStick)
+        {
+            playerWeapon = 2;
+        }
         if (playerWeapon == 0)
         {
-            attackedTimer = 5f;    
+            attackedTimer = 10f;    
+        }
+        if (playerWeapon == 1)
+        {
+            attackedTimer = 5f;
+        }
+        if (playerWeapon == 2)
+        {
+            attackedTimer = 3f;
         }
         if (Time.time >= nextUpdate)
         {

@@ -165,6 +165,16 @@ public class InventoryScript : MonoBehaviour
     {
         items.Add(item);
         Debug.Log("Added " + item.itemName + " to inventory");
+        if (item.itemName == "Knife")
+        {
+            hasKnife = true;
+            Debug.Log("got knife yay");
+        }
+        if (item.itemName == "Stick")
+        {
+            hasStick = true;
+            Debug.Log("got stick yay");
+        }
         RefreshUI();
         StartCoroutine(AddedItemText(item.itemName));
 
