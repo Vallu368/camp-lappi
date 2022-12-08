@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e328abca0b3dc2439aa589a3e701e80, type: 3}
   m_Name: A FOOKEN KNOIF
   m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 0}
-  description: 
+  itemName: Knife
+  itemIcon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+  itemPrefab: {fileID: 5088267340930090820, guid: df36ae4d53cfb9e4d9b271e0fcab9879,
+    type: 3}
+  description: stabby stab stab bitch

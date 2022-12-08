@@ -35,8 +35,11 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem6;
     public bool keyItem7;
     public bool disabled;
+    public int stickIndex;
     public bool hasStick;
+    public int knifeIndex;
     public bool hasKnife;
+    
     [HideInInspector] public bool unlockCursor = false;
     void Start()
     {
@@ -168,15 +171,15 @@ public class InventoryScript : MonoBehaviour
         if (item.itemName == "Knife")
         {
             hasKnife = true;
-            Debug.Log("got knife yay");
+            knifeIndex = items.IndexOf(item);
         }
         if (item.itemName == "Stick")
         {
             hasStick = true;
-            Debug.Log("got stick yay");
+            stickIndex = items.IndexOf(item);
         }
         RefreshUI();
-        StartCoroutine(AddedItemText(item.itemName));
+       // StartCoroutine(AddedItemText(item.itemName));
 
 
     }

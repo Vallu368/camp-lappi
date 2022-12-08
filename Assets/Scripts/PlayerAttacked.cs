@@ -76,7 +76,18 @@ public class PlayerAttacked : MonoBehaviour
             mash.StartButtonMash();
             text.enabled = true;
             playerMov.canMove = false;
-            inv.selectedItem = 0;
+            if (playerWeapon == 0)
+            {
+                inv.selectedItem = 0;
+            }
+            if (playerWeapon == 1)
+            {
+                inv.selectedItem = inv.stickIndex;
+            }
+            if (playerWeapon == 2)
+            {
+                inv.selectedItem = inv.knifeIndex;
+            }
             act.ChangeHeldItem();
             anim.SetBool("Attacked", true);
             inv.disabled = true;
