@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UseKeyItem : MonoBehaviour
 {
+    public bool running;
     public InventoryScript inv;
     public PlayerMovement playerMov;
     public GameObject noKeyItem;
@@ -12,6 +14,9 @@ public class UseKeyItem : MonoBehaviour
     public bool keyItemUsed;
     FadeToBlack fade;
     public AudioSource audio;
+    public string textIfMissingItem;
+    public string textAfterSuccess;
+    TextMeshProUGUI playerSpeech;
     void Start()
     {
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
@@ -19,6 +24,8 @@ public class UseKeyItem : MonoBehaviour
         playerMov = GameObject.Find("Main Camera").GetComponent<PlayerMovement>();
         audio = this.GetComponent<AudioSource>();
         keyItemObject.SetActive(false);
+        playerSpeech = GameObject.Find("PlayerSpeech").GetComponent<TextMeshProUGUI>();
+        playerSpeech.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,7 +44,7 @@ public class UseKeyItem : MonoBehaviour
 
                     StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem1");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 2)
             {
@@ -109,20 +116,44 @@ public class UseKeyItem : MonoBehaviour
 
         }
     }
+    IEnumerator MissingKey()
+    {
+        if (!running)
+        {
+            running = true;
+            playerSpeech.text = textIfMissingItem;
+            playerSpeech.gameObject.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            playerSpeech.gameObject.SetActive(false);
+            running = false;
+        }
+        else Debug.Log("stop spamming");
+
+    }
 
     IEnumerator UseKey()
     {
-        playerMov.usingKeyItem = true;
-        StartCoroutine(fade.FadeIn(6f));
-        audio.Play();
-        yield return new WaitForSeconds(5);
-        //sounds
-        noKeyItem.SetActive(false);
-        keyItemObject.SetActive(true);
-        keyItemUsed = true;
-        audio.Stop();
-        StartCoroutine(fade.FadeOut(3f));
-        playerMov.usingKeyItem = false;
+        if (!running)
+        {
+            running = true;
+            playerMov.usingKeyItem = true;
+            StartCoroutine(fade.FadeIn(6f));
+            audio.Play();
+            yield return new WaitForSeconds(5);
+            //sounds
+            noKeyItem.SetActive(false);
+            keyItemObject.SetActive(true);
+            keyItemUsed = true;
+            audio.Stop();
+            StartCoroutine(fade.FadeOut(3f));
+            playerMov.usingKeyItem = false;
+            playerSpeech.text = textAfterSuccess;
+            playerSpeech.gameObject.SetActive(true);
+            yield return new WaitForSeconds(5);
+            playerSpeech.gameObject.SetActive(false);
+            running = false;
+        }
+        else Debug.Log("stop spamming");
 
 
     }

@@ -14,7 +14,7 @@ public class PlayerAttacked : MonoBehaviour
     private MonsterMind monsterMind;
     private InventoryScript inv;
     private ActiveItem act;
-    private Animator anim;
+    [HideInInspector] public Animator anim;
     public int playerWeapon; //0 no weapons 1 is stick, 2 is knife
     public float attackedTimer;
 

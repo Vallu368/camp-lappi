@@ -20,13 +20,20 @@ public class InventoryScript : MonoBehaviour
     public int selectedItem;
     private int i;
     AudioSource audio;
-    public GameObject keyItemSlot1;
-    public GameObject keyItemSlot2;
-    public GameObject keyItemSlot3;
-    public GameObject keyItemSlot4;
-    public GameObject keyItemSlot5;
-    public GameObject keyItemSlot6;
-    public GameObject keyItemSlot7;
+    [HideInInspector] public GameObject keyItemSlot1;
+    [HideInInspector] public GameObject keyItemSlot2;
+    [HideInInspector] public GameObject keyItemSlot3;
+    [HideInInspector] public GameObject keyItemSlot4;
+    [HideInInspector] public GameObject keyItemSlot5;
+    [HideInInspector] public GameObject keyItemSlot6;
+    [HideInInspector] public GameObject keyItemSlot7;
+    [HideInInspector] public GameObject keyItemSilhouette1;
+    [HideInInspector] public GameObject keyItemSilhouette2;
+    [HideInInspector] public GameObject keyItemSilhouette3;
+    [HideInInspector] public GameObject keyItemSilhouette4;
+    [HideInInspector] public GameObject keyItemSilhouette5;
+    [HideInInspector] public GameObject keyItemSilhouette6;
+    [HideInInspector] public GameObject keyItemSilhouette7;
     public bool keyItem1;
     public bool keyItem2;
     public bool keyItem3;
@@ -39,15 +46,24 @@ public class InventoryScript : MonoBehaviour
     public bool hasStick;
     public int knifeIndex;
     public bool hasKnife;
+    public bool changingItem;
     
     [HideInInspector] public bool unlockCursor = false;
     void Start()
     {
         addedItemText = GameObject.Find("AddedItem");
+        addedItemText.SetActive(false);
         audio = this.GetComponent<AudioSource>();
         act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
         motiv = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         movement = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
+        keyItemSilhouette1 = GameObject.Find("KeyItemSilhouette1");
+        keyItemSilhouette2 = GameObject.Find("KeyItemSilhouette2");
+        keyItemSilhouette3 = GameObject.Find("KeyItemSilhouette3");
+        keyItemSilhouette4 = GameObject.Find("KeyItemSilhouette4");
+        keyItemSilhouette5 = GameObject.Find("KeyItemSilhouette5");
+        keyItemSilhouette6 = GameObject.Find("KeyItemSilhouette6");
+        keyItemSilhouette7 = GameObject.Find("KeyItemSilhouette7");
         keyItemSlot1 = GameObject.Find("KeyItemSlot1");
         keyItemSlot2 = GameObject.Find("KeyItemSlot2");
         keyItemSlot3 = GameObject.Find("KeyItemSlot3");
@@ -77,6 +93,7 @@ public class InventoryScript : MonoBehaviour
     
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.I) && !motiv.dead && !movement.usingKeyItem)
         {
             audio.Play();
@@ -93,8 +110,9 @@ public class InventoryScript : MonoBehaviour
         }
         if (!disabled)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f && !changingItem)
             {
+                changingItem = true;
                 if (selectedItem != items.Count - 1)
                 {
                     selectedItem++;
@@ -102,8 +120,9 @@ public class InventoryScript : MonoBehaviour
                 else selectedItem = 0;
                 StartCoroutine(act.ChangeItem());
             } //scroll up
-            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f && !changingItem)
             {
+                changingItem = true;
                 if (selectedItem != 0)
                 {
                     selectedItem = selectedItem - 1;
@@ -135,11 +154,38 @@ public class InventoryScript : MonoBehaviour
         }
         if (keyItem1)
         {
+            keyItemSilhouette1.SetActive(false);
             keyItemSlot1.SetActive(true);
         }
         if (keyItem2)
         {
+            keyItemSilhouette2.SetActive(false);
             keyItemSlot2.SetActive(true);
+        }
+        if (keyItem3)
+        {
+            keyItemSilhouette3.SetActive(false);
+            keyItemSlot3.SetActive(true);
+        }
+        if (keyItem4)
+        {
+            keyItemSilhouette4.SetActive(false);
+            keyItemSlot4.SetActive(true);
+        }
+        if (keyItem5)
+        {
+            keyItemSilhouette5.SetActive(false);
+            keyItemSlot5.SetActive(true);
+        }
+        if (keyItem6)
+        {
+            keyItemSilhouette6.SetActive(false);
+            keyItemSlot6.SetActive(true);
+        }
+        if (keyItem7)
+        {
+            keyItemSilhouette7.SetActive(false);
+            keyItemSlot7.SetActive(true);
         }
 
 
@@ -163,6 +209,7 @@ public class InventoryScript : MonoBehaviour
                 slots[i].transform.GetChild(0).GetComponent<Button>().sprite = null;
             }
         }
+        changingItem = false;
     }
     public void AddItemToInventory(Item item)
     {
@@ -179,7 +226,7 @@ public class InventoryScript : MonoBehaviour
             stickIndex = items.IndexOf(item);
         }
         RefreshUI();
-       // StartCoroutine(AddedItemText(item.itemName));
+        StartCoroutine(AddedItemText(item.itemName));
 
 
     }
