@@ -112,7 +112,7 @@ public class UseKeyItem : MonoBehaviour
 
     IEnumerator UseKey()
     {
-        playerMov.canMove = false;
+        playerMov.usingKeyItem = true;
         StartCoroutine(fade.FadeIn(6f));
         audio.Play();
         yield return new WaitForSeconds(5);
@@ -122,7 +122,7 @@ public class UseKeyItem : MonoBehaviour
         keyItemUsed = true;
         audio.Stop();
         StartCoroutine(fade.FadeOut(3f));
-        playerMov.canMove = true;
+        playerMov.usingKeyItem = false;
 
 
     }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public bool canMove;
+    public bool usingKeyItem;
     public float moveSpeed;
     public float moveSpeedSlowed;
     public float moveSpeedVerySlow;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (rb.velocity.x != 0)
         {
             if (!walkingSound.isPlaying)
@@ -59,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
             
             rb.velocity = Vector3.zero;
+        }
+        if (usingKeyItem)
+        {
+            canMove = false;
         }
 
         Movement();

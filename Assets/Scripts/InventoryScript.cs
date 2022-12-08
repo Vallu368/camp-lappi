@@ -74,7 +74,7 @@ public class InventoryScript : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && !motiv.dead)
+        if (Input.GetKeyDown(KeyCode.I) && !motiv.dead && !movement.usingKeyItem)
         {
             audio.Play();
             if (!inventoryOpen)
