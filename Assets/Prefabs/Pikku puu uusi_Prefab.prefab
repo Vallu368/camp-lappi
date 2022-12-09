@@ -114,16 +114,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3363d41997f60904698d410caeae891f, type: 2}
+    - target: {fileID: -5568371526223589888, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1939488787286395017, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
         type: 3}
       propertyPath: m_Name
       value: PIKKU PUU V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4441611318476886148, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: effc8cd24a3461d4cac3091914aa09c1, type: 2}
+    - target: {fileID: 6469601406266158627, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 1ad99ba76c634d641b2fcd8aceaa7785,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
