@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7172946160449917300}
   - component: {fileID: 6063172286965456593}
   - component: {fileID: 8340737272739621403}
+  - component: {fileID: 4494455234775494874}
   m_Layer: 0
   m_Name: pikku risu
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4494455234775494874
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7548239872439274446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4781277628412113339, guid: 7f07e7134ffd3a74e878fc414de84031, type: 3}
