@@ -125,7 +125,7 @@ public class PlayerAttacked : MonoBehaviour
     {
         if (!running)
         {
-            if (beingAttacked)
+            if (beingAttacked && !motivation.dead)
             {
                 running = true;
                 spaceBar.SetActive(true);
