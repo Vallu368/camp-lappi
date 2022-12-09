@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8831427952098191288}
+  - component: {fileID: 1629964858371058742}
   m_Layer: 0
   m_Name: luminen kuusi_Prefab
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1629964858371058742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694207056309720041}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.944845, y: 21.231232, z: 7.181202}
+  m_Center: {x: -0.8990164, y: 7.661417, z: -0.18633842}
 --- !u!1001 &3657901573882941080
 PrefabInstance:
   m_ObjectHideFlags: 0
