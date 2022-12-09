@@ -38,6 +38,16 @@ public class ActiveItem : MonoBehaviour
             anim.SetBool("OtherActive", false);
 
         }
+        if ((currentHeldItem.tag == "Weapon"))
+        {
+            anim.SetBool("WeaponActive", true);
+
+        }
+        else
+        {
+            anim.SetBool("WeaponActive", false);
+
+        }
 
     }
     public void InstantiateObject(GameObject gameObject)

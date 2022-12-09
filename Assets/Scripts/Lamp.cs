@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lamp : MonoBehaviour
 {
     public GameObject lampPrefab;
-    public GameObject hand;
+    GameObject hand;
     void Start()
     {
         hand = this.transform.parent.gameObject;
@@ -16,6 +16,6 @@ public class Lamp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = hand.transform.position;
+       // this.transform.position = hand.transform.position;
     }
 }

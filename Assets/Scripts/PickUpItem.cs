@@ -10,7 +10,7 @@ public class PickUpItem : MonoBehaviour
     public int keyItemNumber;
     public bool played;
     public AudioSource audio;
-    public GameObject mesh;
+    GameObject mesh;
     void Start()
     {
         mesh = this.transform.GetChild(0).gameObject;

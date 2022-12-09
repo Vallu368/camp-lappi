@@ -67,11 +67,13 @@ public class PlayerRespawn : MonoBehaviour
             restart.SetActive(false);
             Debug.Log("resetti spaghetti");
             yield return new WaitForSeconds(2f);
+            attack.anim.SetBool("Reset", false);
             MovePlayerToSpawn();
             StartCoroutine(fade.FadeOut(2f));
             inv.unlockCursor = false;
             move.canMove = true;
             mash.mashingFailed = false;
+            
         }
         else Debug.Log("not dead cant reset");
     }

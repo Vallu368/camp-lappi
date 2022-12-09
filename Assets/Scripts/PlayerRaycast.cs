@@ -58,6 +58,43 @@ public class PlayerRaycast : MonoBehaviour
                             inv.keyItem2 = true;
                             hit.transform.GetComponent<PickUpItem>().taken = true;
                         }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 3)
+                        {
+                            Debug.Log("key item 3 added to inventory");
+                            inv.keyItem3 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 4)
+                        {
+                            Debug.Log("key item 4 added to inventory");
+                            inv.keyItem4 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 5)
+                        {
+                            Debug.Log("key item 5 added to inventory");
+                            inv.keyItem5 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 6)
+                        {
+                            Debug.Log("key item 6 added to inventory");
+                            inv.keyItem6 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 7)
+                        {
+                            Debug.Log("key item 7 added to inventory");
+                            inv.keyItem7 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 7)
+                        {
+                            Debug.Log("key item 7 added to inventory");
+                            inv.keyItem7 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
+                        }
+
                     }
                 }
 

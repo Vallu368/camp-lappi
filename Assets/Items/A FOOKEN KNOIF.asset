@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e328abca0b3dc2439aa589a3e701e80, type: 3}
+  m_Name: A FOOKEN KNOIF
+  m_EditorClassIdentifier: 
+  itemName: Knife
+  itemIcon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+  itemPrefab: {fileID: 5088267340930090820, guid: df36ae4d53cfb9e4d9b271e0fcab9879,
+    type: 3}
+  description: stabby stab stab bitch

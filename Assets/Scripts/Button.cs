@@ -14,6 +14,7 @@ public class Button : MonoBehaviour
 
     private void Start()
     {
+        text = GameObject.Find("ItemDescription").GetComponent<TextMeshProUGUI>();
     }
     private void Update()
     {
