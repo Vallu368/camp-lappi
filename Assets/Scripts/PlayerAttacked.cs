@@ -7,7 +7,7 @@ using static UnityEngine.PlayerLoop.PreLateUpdate;
 public class PlayerAttacked : MonoBehaviour
 {
     public bool beingAttacked;
-    private TextMeshProUGUI text;
+    public GameObject spaceBar;
     private PlayerMotivation motivation;
     private ButtonMashing mash;
     private PlayerMovement playerMov;
@@ -17,6 +17,7 @@ public class PlayerAttacked : MonoBehaviour
     [HideInInspector] public Animator anim;
     public int playerWeapon; //0 no weapons 1 is stick, 2 is knife
     public float attackedTimer;
+    private bool running;
 
 
 
@@ -27,8 +28,8 @@ public class PlayerAttacked : MonoBehaviour
     {
         anim = this.gameObject.GetComponentInChildren<Animator>();
         monsterMind = GameObject.Find("Monster").GetComponent<MonsterMind>();
-        text = GameObject.Find("MashText").GetComponent<TextMeshProUGUI>();
-        text.enabled = false;
+        spaceBar = GameObject.Find("SpaceBar").gameObject;
+        spaceBar.SetActive(false);
         motivation = GameObject.Find("Player").GetComponent<PlayerMotivation>();
         mash = GameObject.Find("Player").GetComponent<ButtonMashing>();
         playerMov = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
@@ -74,7 +75,7 @@ public class PlayerAttacked : MonoBehaviour
         {
             playerMov.enabled = false;
             mash.StartButtonMash();
-            text.enabled = true;
+            StartCoroutine(SpaceBarFlash());
             playerMov.canMove = false;
             if (playerWeapon == 0)
             {
@@ -96,7 +97,7 @@ public class PlayerAttacked : MonoBehaviour
         if (!beingAttacked)
         {
             playerMov.enabled = true;
-            text.enabled = false;
+            spaceBar.SetActive(false);
             mash.StopButtonMash();
             playerMov.canMove = true;
             inv.disabled = false;
@@ -120,6 +121,22 @@ public class PlayerAttacked : MonoBehaviour
         }
 
         }
+    public IEnumerator SpaceBarFlash()
+    {
+        if (!running)
+        {
+            if (beingAttacked)
+            {
+                running = true;
+                spaceBar.SetActive(true);
+                yield return new WaitForSeconds(0.3f);
+                spaceBar.SetActive(false);
+                yield return new WaitForSeconds(0.2f);
+                running = false;
+            }
+        }
+
+    }
     public void UpdateEverySecond()
     {
         if (beingAttacked)
