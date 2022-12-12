@@ -9,6 +9,7 @@ TagManager:
   - Item
   - KeyItem
   - Compass
+  - Weapon
   layers:
   - Default
   - TransparentFX
