@@ -90,6 +90,7 @@ public class PlayerAttacked : MonoBehaviour
                 inv.selectedItem = inv.knifeIndex;
             }
             act.ChangeHeldItem();
+            anim.SetBool("Reset", false);
             anim.SetBool("Attacked", true);
             inv.disabled = true;
             monsterMind.suspicion = 100;
