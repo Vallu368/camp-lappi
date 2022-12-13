@@ -61,6 +61,7 @@ public class ActiveItem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         ChangeHeldItem();
         anim.SetBool("Reset", false);
+        inv.changingItem = false;
         yield return null;
     }
 

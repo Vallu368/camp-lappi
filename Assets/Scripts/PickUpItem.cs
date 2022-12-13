@@ -31,6 +31,7 @@ public class PickUpItem : MonoBehaviour
                 }
             }
             mesh.SetActive(false);
+            this.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

@@ -16,7 +16,7 @@ public class UseKeyItem : MonoBehaviour
     public AudioSource audio;
     public string textIfMissingItem;
     public string textAfterSuccess;
-    TextMeshProUGUI playerSpeech;
+    public TextMeshProUGUI playerSpeech;
     void Start()
     {
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
@@ -24,7 +24,6 @@ public class UseKeyItem : MonoBehaviour
         playerMov = GameObject.Find("Main Camera").GetComponent<PlayerMovement>();
         audio = this.GetComponent<AudioSource>();
         keyItemObject.SetActive(false);
-        playerSpeech = GameObject.Find("PlayerSpeech").GetComponent<TextMeshProUGUI>();
         playerSpeech.gameObject.SetActive(false);
     }
 
@@ -50,34 +49,28 @@ public class UseKeyItem : MonoBehaviour
             {
                 if (inv.keyItem2)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem2");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 3)
             {
                 if (inv.keyItem3)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem3");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 4)
             {
                 if (inv.keyItem4)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem4");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 5)
             {
@@ -141,7 +134,10 @@ public class UseKeyItem : MonoBehaviour
             audio.Play();
             yield return new WaitForSeconds(5);
             //sounds
-            noKeyItem.SetActive(false);
+            if (noKeyItem != null)
+            {
+                noKeyItem.SetActive(false);
+            }
             keyItemObject.SetActive(true);
             keyItemUsed = true;
             audio.Stop();
@@ -152,6 +148,7 @@ public class UseKeyItem : MonoBehaviour
             yield return new WaitForSeconds(5);
             playerSpeech.gameObject.SetActive(false);
             running = false;
+            this.GetComponent<BoxCollider>().enabled = false;
         }
         else Debug.Log("stop spamming");
 
