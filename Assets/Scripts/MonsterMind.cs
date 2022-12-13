@@ -65,7 +65,7 @@ public class MonsterMind : MonoBehaviour
 			case MonsterState.Hunting:
 				MonsterMovementScript.Hunt();
 				
-				if (DistanceToPlayer < 2)
+				if (DistanceToPlayer < 7)
 				{
                     _monsterState = MonsterState.Attacking;
                 }

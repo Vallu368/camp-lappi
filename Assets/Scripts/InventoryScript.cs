@@ -41,6 +41,7 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem5;
     public bool keyItem6;
     public bool keyItem7;
+    public bool ending;
     public bool disabled;
     public int stickIndex;
     public bool hasStick;
@@ -188,7 +189,10 @@ public class InventoryScript : MonoBehaviour
             keyItemSlot7.SetActive(true);
         }
 
-
+        if (keyItem1 && keyItem2 && keyItem3 && keyItem4 && keyItem5 && keyItem6 && keyItem7)
+        {
+            ending = true;
+        }
     }
     public void RefreshUI()
     {
