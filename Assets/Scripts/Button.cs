@@ -28,4 +28,9 @@ public class Button : MonoBehaviour
     {
         text.text = " ";
     }
+    public void CloseEscMenu()
+    {
+        inv.escMenuOpen = false;
+        inv.escMenu.SetActive(false);
+    }
 }

@@ -48,6 +48,8 @@ public class InventoryScript : MonoBehaviour
     public int knifeIndex;
     public bool hasKnife;
     public bool changingItem;
+    public bool escMenuOpen;
+    public GameObject escMenu;
     
     [HideInInspector] public bool unlockCursor = false;
     void Start()
@@ -89,13 +91,29 @@ public class InventoryScript : MonoBehaviour
         keyItemSlot6.SetActive(false);
         keyItemSlot7.SetActive(false);
 
+        escMenu = GameObject.Find("EscMenu");
+        escMenu.SetActive(false);
+        escMenuOpen = false;
+
     }
 
     
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.I) && !motiv.dead && !movement.usingKeyItem)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!escMenuOpen)
+            {
+                escMenu.SetActive(true);
+                escMenuOpen = true;
+            }
+            else
+            {
+                escMenu.SetActive(false);
+                escMenuOpen = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.I) && !motiv.dead && !movement.usingKeyItem &&!escMenuOpen)
         {
             audio.Play();
             if (!inventoryOpen)
