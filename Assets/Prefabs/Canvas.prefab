@@ -5470,8 +5470,6 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 5513e77f37f3b6b428d5be20115c0126, type: 2}
   - {fileID: 11400000, guid: 13a4174c06c1d5c4e971023a447b61b4, type: 2}
-  - {fileID: 11400000, guid: 5952839872880654992a77d4cb6fe2b0, type: 2}
-  - {fileID: 11400000, guid: 05e7eaaa251931a488e79a2b6aa67f94, type: 2}
   addedItemText: {fileID: 0}
   slotHolder: {fileID: 2523278242525500586}
   itemsMaxIndex: 0
