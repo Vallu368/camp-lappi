@@ -10,9 +10,13 @@ public class PickUpItem : MonoBehaviour
     public int keyItemNumber;
     public bool played;
     public AudioSource audio;
+    public InventoryScript inv;
+    public string pickUpText;
+    private bool f;
     GameObject mesh;
     void Start()
     {
+        inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         mesh = this.transform.GetChild(0).gameObject;
         audio = this.GetComponent<AudioSource>();
     }
@@ -29,6 +33,16 @@ public class PickUpItem : MonoBehaviour
                     audio.Play();
                     played = true;
                 }
+            }
+            if (isKeyitem)
+            {
+                if (!f)
+                {
+                    StartCoroutine(inv.AddedItemText(pickUpText));
+                    f = true;
+                }
+
+
             }
             mesh.SetActive(false);
             this.GetComponent<BoxCollider>().enabled = false;

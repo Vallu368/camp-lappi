@@ -113,6 +113,11 @@ public class InventoryScript : MonoBehaviour
                 escMenuOpen = false;
             }
         }
+        if (escMenuOpen || inventoryOpen)
+        {
+            Time.timeScale = 0;
+        }
+        else Time.timeScale = 1;
         if (Input.GetKeyDown(KeyCode.I) && !motiv.dead && !movement.usingKeyItem &&!escMenuOpen)
         {
             audio.Play();
@@ -160,7 +165,7 @@ public class InventoryScript : MonoBehaviour
 
             }
         } 
-        if (inventoryOpen || unlockCursor)
+        if (inventoryOpen || unlockCursor ||escMenuOpen)
         {
             Cursor.lockState = CursorLockMode.None;
             movement.canMove = false;
@@ -248,15 +253,15 @@ public class InventoryScript : MonoBehaviour
             stickIndex = items.IndexOf(item);
         }
         RefreshUI();
-        StartCoroutine(AddedItemText(item.itemName));
+        StartCoroutine(AddedItemText(item.description));
 
 
     }
-    public IEnumerator AddedItemText(string itemName)
+    public IEnumerator AddedItemText(string speech)
     {
         addedItemText.SetActive(true);
         TextMeshProUGUI text = addedItemText.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        text.text = itemName;
+        text.text = speech;
 
         yield return new WaitForSeconds(2f);
         addedItemText.SetActive(false);
@@ -275,6 +280,15 @@ public class InventoryScript : MonoBehaviour
 
         }
         else Debug.Log("Can't delete, not consumable");
+    }
+
+    public void CloseEscMenu()
+    {
+        if (escMenuOpen)
+        {
+            escMenuOpen = false;
+            escMenu.SetActive(false);
+        }
     }
 
 }
