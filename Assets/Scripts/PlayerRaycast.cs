@@ -93,6 +93,13 @@ public class PlayerRaycast : MonoBehaviour
                             Debug.Log("key item 7 added to inventory");
                             inv.keyItem7 = true;
                             hit.transform.GetComponent<PickUpItem>().taken = true;
+
+                        }
+                        if (hit.transform.GetComponent<PickUpItem>().keyItemNumber == 8)
+                        {
+                            Debug.Log("key item 8 added to inventory");
+                            inv.keyItem8 = true;
+                            hit.transform.GetComponent<PickUpItem>().taken = true;
                         }
 
                     }

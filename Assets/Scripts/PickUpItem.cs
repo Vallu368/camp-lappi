@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
+    public PlayerMovement playerMov;
+    public FadeToBlack fade;
     public bool taken = false;
     public Item item;
     public bool isKeyitem;
@@ -16,6 +18,8 @@ public class PickUpItem : MonoBehaviour
     GameObject mesh;
     void Start()
     {
+        fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();
+        playerMov = GameObject.Find("Main Camera").GetComponent<PlayerMovement>();
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         mesh = this.transform.GetChild(0).gameObject;
         audio = this.GetComponent<AudioSource>();
@@ -26,6 +30,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (taken)
         {
+            
             if (audio != null)
             {
                 if (!audio.isPlaying && !played)
@@ -36,10 +41,15 @@ public class PickUpItem : MonoBehaviour
             }
             if (isKeyitem)
             {
+                
                 if (!f)
                 {
                     StartCoroutine(inv.AddedItemText(pickUpText));
                     f = true;
+                    if (this.gameObject.name == "Bandage_Prefab")
+                    {
+                        StartCoroutine(UseBandage());
+                    }
                 }
 
 
@@ -48,4 +58,20 @@ public class PickUpItem : MonoBehaviour
             this.GetComponent<BoxCollider>().enabled = false;
         }
     }
+
+    IEnumerator UseBandage()
+    {
+        playerMov.usingKeyItem = true;
+
+        yield return new WaitForSeconds(3);
+        StartCoroutine(fade.FadeIn(3f));
+        inv.bandageSound.Play();
+        inv.bleeding.SetActive(false);
+        yield return new WaitForSeconds(5);
+        StartCoroutine(fade.FadeOut(3f));
+        playerMov.usingKeyItem = false;
+        StartCoroutine(inv.AddedItemText("BANDAGE USED TEXT HERE"));
+        inv.keyItemsUsed++;
+
+    }   
 }

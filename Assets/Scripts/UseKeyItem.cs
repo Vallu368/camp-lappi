@@ -76,34 +76,33 @@ public class UseKeyItem : MonoBehaviour
             {
                 if (inv.keyItem5)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem5");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 6)
             {
                 if (inv.keyItem6)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem6");
+                else StartCoroutine(MissingKey());
             }
             if (keyItemNeededID == 7)
             {
                 if (inv.keyItem7)
                 {
-                    //fade to black alkuun
-                    noKeyItem.SetActive(false);
-                    keyItemObject.SetActive(true);
-                    keyItemUsed = true;
+                    StartCoroutine(UseKey());
                 }
-                else Debug.Log("need keyItem7");
+                else StartCoroutine(MissingKey());
+            }
+            if (keyItemNeededID == 8)
+            {
+                if (inv.keyItem7)
+                {
+                    StartCoroutine(UseKey());   
+                }
+                else StartCoroutine(MissingKey());
             }
 
 
@@ -126,9 +125,10 @@ public class UseKeyItem : MonoBehaviour
 
     IEnumerator UseKey()
     {
-        if (!running)
+        if (!running && !inv.running)
         {
             running = true;
+            inv.running = true;
             playerMov.usingKeyItem = true;
             StartCoroutine(fade.FadeIn(6f));
             audio.Play();
@@ -148,7 +148,9 @@ public class UseKeyItem : MonoBehaviour
             yield return new WaitForSeconds(5);
             playerSpeech.gameObject.SetActive(false);
             running = false;
+            inv.running = false;
             this.GetComponent<BoxCollider>().enabled = false;
+            inv.keyItemsUsed++;
         }
         else Debug.Log("stop spamming");
 

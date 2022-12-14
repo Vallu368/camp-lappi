@@ -16,5 +16,5 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 93e8dd60d7a92674c8a8bfe58cdc27c9, type: 3}
   itemPrefab: {fileID: 3582096938017616852, guid: 8b970339a3a42b2459c9178529d1b056,
     type: 3}
-  description: nom nom nom
+  description: Ah some chocolate. This definitely helps.
   health: 35

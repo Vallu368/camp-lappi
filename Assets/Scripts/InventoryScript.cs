@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
+    public int keyItemsUsed = 0;
     public ActiveItem act;
+    public GameObject bleeding;
     public GameObject inventory;
     public PlayerMotivation motiv;
     public PlayerMovement movement;
@@ -20,6 +22,8 @@ public class InventoryScript : MonoBehaviour
     public int selectedItem;
     private int i;
     AudioSource audio;
+    public AudioSource bandageSound;
+    public bool running;
     [HideInInspector] public GameObject keyItemSlot1;
     [HideInInspector] public GameObject keyItemSlot2;
     [HideInInspector] public GameObject keyItemSlot3;
@@ -27,6 +31,8 @@ public class InventoryScript : MonoBehaviour
     [HideInInspector] public GameObject keyItemSlot5;
     [HideInInspector] public GameObject keyItemSlot6;
     [HideInInspector] public GameObject keyItemSlot7;
+    [HideInInspector] public GameObject keyItemSlot8;
+
     [HideInInspector] public GameObject keyItemSilhouette1;
     [HideInInspector] public GameObject keyItemSilhouette2;
     [HideInInspector] public GameObject keyItemSilhouette3;
@@ -34,6 +40,8 @@ public class InventoryScript : MonoBehaviour
     [HideInInspector] public GameObject keyItemSilhouette5;
     [HideInInspector] public GameObject keyItemSilhouette6;
     [HideInInspector] public GameObject keyItemSilhouette7;
+    [HideInInspector] public GameObject keyItemSilhouette8;
+
     public bool keyItem1;
     public bool keyItem2;
     public bool keyItem3;
@@ -41,6 +49,7 @@ public class InventoryScript : MonoBehaviour
     public bool keyItem5;
     public bool keyItem6;
     public bool keyItem7;
+    public bool keyItem8;
     public bool ending;
     public bool disabled;
     public int stickIndex;
@@ -54,6 +63,7 @@ public class InventoryScript : MonoBehaviour
     [HideInInspector] public bool unlockCursor = false;
     void Start()
     {
+        bleeding = GameObject.Find("Blood_PS");
         addedItemText = GameObject.Find("AddedItem");
         addedItemText.SetActive(false);
         audio = this.GetComponent<AudioSource>();
@@ -67,6 +77,7 @@ public class InventoryScript : MonoBehaviour
         keyItemSilhouette5 = GameObject.Find("KeyItemSilhouette5");
         keyItemSilhouette6 = GameObject.Find("KeyItemSilhouette6");
         keyItemSilhouette7 = GameObject.Find("KeyItemSilhouette7");
+        keyItemSilhouette8 = GameObject.Find("KeyItemSilhouette8");
         keyItemSlot1 = GameObject.Find("KeyItemSlot1");
         keyItemSlot2 = GameObject.Find("KeyItemSlot2");
         keyItemSlot3 = GameObject.Find("KeyItemSlot3");
@@ -74,6 +85,7 @@ public class InventoryScript : MonoBehaviour
         keyItemSlot5 = GameObject.Find("KeyItemSlot5");
         keyItemSlot6 = GameObject.Find("KeyItemSlot6");
         keyItemSlot7 = GameObject.Find("KeyItemSlot7");
+        keyItemSlot8 = GameObject.Find("KeyItemSlot8");
 
         inventory.SetActive(false);
         inventoryOpen = false;
@@ -90,7 +102,7 @@ public class InventoryScript : MonoBehaviour
         keyItemSlot5.SetActive(false);
         keyItemSlot6.SetActive(false);
         keyItemSlot7.SetActive(false);
-
+        keyItemSlot8.SetActive(false);
         escMenu = GameObject.Find("EscMenu");
         escMenu.SetActive(false);
         escMenuOpen = false;
@@ -180,6 +192,12 @@ public class InventoryScript : MonoBehaviour
         {
             keyItemSilhouette1.SetActive(false);
             keyItemSlot1.SetActive(true);
+            bool i = false;
+
+            if (!i)
+            {
+
+            }
         }
         if (keyItem2)
         {
@@ -210,6 +228,11 @@ public class InventoryScript : MonoBehaviour
         {
             keyItemSilhouette7.SetActive(false);
             keyItemSlot7.SetActive(true);
+        }
+        if (keyItem8)
+        {
+            keyItemSilhouette8.SetActive(false);
+            keyItemSlot8.SetActive(true);
         }
 
         if (keyItem1 && keyItem2 && keyItem3 && keyItem4 && keyItem5 && keyItem6 && keyItem7)

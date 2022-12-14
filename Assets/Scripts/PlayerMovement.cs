@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (rb.velocity.x != 0)
         {
             if (!walkingSound.isPlaying)
@@ -130,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveDirection.normalized * currentSpeed * multiplier, ForceMode.Acceleration);
 
         }
+        
     }
     
 
