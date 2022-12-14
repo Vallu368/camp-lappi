@@ -89815,6 +89815,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 303798548289801614, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 328.302
+      objectReference: {fileID: 0}
     - target: {fileID: 2049992501954360928, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
       propertyPath: m_RootOrder
@@ -89874,6 +89879,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Collectables
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983698360323478020, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983698360323478020, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983698360323478020, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a10cf3ea42f30409f357345dd2aa39, type: 3}
