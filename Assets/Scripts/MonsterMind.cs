@@ -20,9 +20,11 @@ public class MonsterMind : MonoBehaviour
 	enum MonsterState{Watching, Roaming, Hunting, Attacking}
 	float pursueTimer; //Cached variable to keep track of pursue duration
 	public float suspicion; //Variable that is increased when player is sensed, gives the monster pause to investigate and eventually initiates attack
+	public InventoryScript inv;
 	
 	void Awake()
 	{
+		inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
 		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerAttacked = GameObject.Find("Player").GetComponent<PlayerAttacked>();
 		anim = this.GetComponent<Animator>();
@@ -42,7 +44,7 @@ public class MonsterMind : MonoBehaviour
 		{
 			case MonsterState.Watching:
 				//Debug.Log($"Monster watching");
-                if (suspicion >= 100f) //Temporary anger placeholder
+                if (suspicion >= 100f && !inv.running) //Temporary anger placeholder
                 {
                     Debug.Log($"<color=red>Monster angy!!</color>");
                     _monsterState = MonsterState.Hunting;
@@ -67,7 +69,10 @@ public class MonsterMind : MonoBehaviour
 				
 				if (DistanceToPlayer < 7)
 				{
-                    _monsterState = MonsterState.Attacking;
+                    if (!inv.running)
+                    {
+						_monsterState = MonsterState.Attacking;
+					}
                 }
                 if (suspicion <= 0f) //Temporary calming placeholder
                 {

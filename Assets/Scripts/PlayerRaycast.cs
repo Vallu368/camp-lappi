@@ -7,16 +7,15 @@ public class PlayerRaycast : MonoBehaviour
     public float maxRange;
     RaycastHit hit;
    [HideInInspector] public InventoryScript inv;
+    public GameObject interractText;
     
 
 
     void Start()
     {
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
-        if (inv == null)
-        {
-            Debug.Log("inventory script not found plz fix");
-        }
+        interractText = GameObject.Find("InterractText");
+        interractText.SetActive(false);
     }
 
     void Update()
@@ -28,6 +27,7 @@ public class PlayerRaycast : MonoBehaviour
         {
             if (hit.transform.tag == "Item")
             {
+                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     inv.AddItemToInventory(hit.transform.GetComponent<PickUpItem>().item);
@@ -36,8 +36,10 @@ public class PlayerRaycast : MonoBehaviour
                 }
 
             }
+            else interractText.SetActive(false);
             if (hit.transform.tag == "KeyItem")
             {
+                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (hit.transform.GetComponent<PickUpItem>().isKeyitem == false)
@@ -106,15 +108,17 @@ public class PlayerRaycast : MonoBehaviour
                 }
 
             }
+            else interractText.SetActive(false);
             if (hit.transform.tag == "test") //using keyitems on camp or whatever
             {
+                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.GetComponent<UseKeyItem>().UseItem();
                 }
 
                 }
-        }
+        } else interractText.SetActive(false);
 
 
 

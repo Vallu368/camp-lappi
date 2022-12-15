@@ -9,12 +9,14 @@ public class MonsterGaze : MonoBehaviour
 	[SerializeField] Color LightColorRoaming;
 	[SerializeField] Color LightColorAlerted;
 	[SerializeField] float gazeSuspicion;
+	public InventoryScript inv;
 	public LayerMask obstructionLayer;
 	float eyeContactFactor;
 	Transform playerTransform;
 	FieldOfView fov;
 	void Start()
 	{
+		inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
 		playerTransform = MonsterMind.playerTransform;
 		fov = this.gameObject.GetComponentInChildren<FieldOfView>();
 	}
@@ -35,7 +37,10 @@ public class MonsterGaze : MonoBehaviour
 			RaycastHit hit;
 			if (!Physics.Raycast(transform.position, (playerTransform.position - transform.position).normalized * 10f, out hit, Mathf.Infinity, obstructionLayer))
 			{
-                MonsterMind.GetSuspicious(gazeSuspicion);
+                if(!inv.running)
+                {
+					MonsterMind.GetSuspicious(gazeSuspicion);
+				}
             }
 			
 
