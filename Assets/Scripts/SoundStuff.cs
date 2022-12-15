@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FakeSpooks : MonoBehaviour
+public class SoundStuff : MonoBehaviour
 {
     private int nextUpdate = 1;
+    public GameObject ambience;
 
     void Start()
     {
@@ -21,9 +22,9 @@ public class FakeSpooks : MonoBehaviour
             UpdateEverySecond();
         }
 
-        void UpdateEverySecond()
-        {
+    }
+    void UpdateEverySecond()
+    {
 
-        }
     }
 }
