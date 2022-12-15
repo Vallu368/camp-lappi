@@ -851,6 +851,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -10704,6 +10709,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -26440,6 +26450,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -27001,6 +27016,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -27698,6 +27718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -69252,6 +69277,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 988111549, guid: d0800889a174e01489f4afc84289abf3, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2523278242037528090, guid: d0800889a174e01489f4afc84289abf3,
         type: 3}
       propertyPath: m_Name
@@ -72378,6 +72407,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -77903,6 +77937,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486501373}
     m_Modifications:
+    - target: {fileID: 637641293203977976, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 637641293203977979, guid: 7f19f3a8081b16348ae838d083ecc3ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -80191,6 +80230,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 122666339, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142538987, guid: 24e7d840b87684b4585e064252657783, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 898100935125537120, guid: 24e7d840b87684b4585e064252657783,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -80255,6 +80302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131406965123394131, guid: 24e7d840b87684b4585e064252657783,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e7d840b87684b4585e064252657783, type: 3}
@@ -80916,6 +80968,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TranslationOffsets.Array.data[0].y
       value: 0.6222305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939601523888062465, guid: a422efea3856ffc448c320d5d500510d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4939601523937369208, guid: a422efea3856ffc448c320d5d500510d,
         type: 3}
@@ -89322,6 +89379,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectables
       objectReference: {fileID: 0}
+    - target: {fileID: 2049992502758519486, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463124949944149575, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142164872061221651, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340492560041236458, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437022380996475675, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437022381139920673, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978994653040248931, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557798938145790245, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616728253473291242, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863671643537829104, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8983698360323478020, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -89559,6 +89666,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4675767323165020045, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4675767323165020048, guid: 716214c50430ff44484a81fb61ed8086,
         type: 3}
       propertyPath: m_Size.x
@@ -89809,6 +89921,16 @@ PrefabInstance:
       propertyPath: textIfMissingItem
       value: I need something to burn for a fire...
       objectReference: {fileID: 0}
+    - target: {fileID: 6180109400254204467, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180109400535896220, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6180109400535896221, guid: 716214c50430ff44484a81fb61ed8086,
         type: 3}
       propertyPath: m_Name
@@ -89848,6 +89970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: textIfMissingItem
       value: Need something to start a fire with
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180109400971905168, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6180109400971905169, guid: 716214c50430ff44484a81fb61ed8086,
         type: 3}
@@ -89909,9 +90036,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6180109401123816798, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6180109401522166285, guid: 716214c50430ff44484a81fb61ed8086,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180109401522166288, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6180109401522166289, guid: 716214c50430ff44484a81fb61ed8086,
@@ -90073,6 +90210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: textIfMissingItem
       value: Need something to drink from
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180109402179061329, guid: 716214c50430ff44484a81fb61ed8086,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6180109402179061335, guid: 716214c50430ff44484a81fb61ed8086,
         type: 3}
