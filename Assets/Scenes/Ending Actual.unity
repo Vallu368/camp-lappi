@@ -69789,6 +69789,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1684902818, guid: d0800889a174e01489f4afc84289abf3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2523278242037528090, guid: d0800889a174e01489f4afc84289abf3,
         type: 3}
       propertyPath: m_Name
@@ -69897,6 +69901,11 @@ PrefabInstance:
     - target: {fileID: 2523278242037528094, guid: d0800889a174e01489f4afc84289abf3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523278242037528095, guid: d0800889a174e01489f4afc84289abf3,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2523278242037528095, guid: d0800889a174e01489f4afc84289abf3,
