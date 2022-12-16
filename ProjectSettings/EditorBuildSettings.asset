@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rakennus scene.unity
     guid: ed1f5ea91890d3548a03b9dd4c534d2c
+  - enabled: 1
+    path: Assets/Scenes/Ending Actual.unity
+    guid: 024078ecbd8c1c940884d61392885649
   m_configObjects: {}
