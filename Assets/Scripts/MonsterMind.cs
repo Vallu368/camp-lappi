@@ -14,6 +14,8 @@ public class MonsterMind : MonoBehaviour
 	[SerializeField] float PursueDelayMin, PursueDelayMax;
 	[Tooltip("Multiplier for how long pursuit happens for and how often. Value of 0.5 means pursuit takes twice as long, and happens twice as much.")]
 	[SerializeField] float PursueDifficultyMultiplier;
+	[SerializeField] Animator rigAnimator;
+	[SerializeField] Transform rigLookAtPlayer;
 	[HideInInspector] public Transform playerTransform {get; private set;} 
 	public float DistanceToPlayer {get; private set;}
 	private Animator anim;
@@ -27,7 +29,8 @@ public class MonsterMind : MonoBehaviour
 	{
 		inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
 		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-		playerAttacked = GameObject.Find("Player").GetComponent<PlayerAttacked>();
+		//playerAttacked = GameObject.Find("Player").GetComponent<PlayerAttacked>();
+		playerAttacked = playerTransform.GetComponent<PlayerAttacked>();
 		anim = this.GetComponent<Animator>();
 		attackSound = this.GetComponent<AudioSource>();
 
@@ -38,7 +41,7 @@ public class MonsterMind : MonoBehaviour
 		DistanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 		CheckMonsterState();
 		CoolOffSuspicion();
-
+		rigLookAtPlayer.position = playerTransform.position;
 	}
 
 	private void CheckMonsterState()
@@ -47,6 +50,7 @@ public class MonsterMind : MonoBehaviour
 		{
 			case MonsterState.Watching:
 				//Debug.Log($"Monster watching");
+				rigAnimator.SetBool("LooksAtPlayer", true);
                 if (suspicion >= 100f && !inv.running) //Temporary anger placeholder
                 {
                     Debug.Log($"<color=red>Monster angy!!</color>");
@@ -59,6 +63,7 @@ public class MonsterMind : MonoBehaviour
                 }
                 break;
 			case MonsterState.Roaming:
+				rigAnimator.SetBool("LooksAtPlayer", false);
 				MonsterMovementScript.Roam();
 				if (suspicion >= 25)
 				{
@@ -69,6 +74,7 @@ public class MonsterMind : MonoBehaviour
 				break;
 			case MonsterState.Hunting:
 				MonsterMovementScript.Hunt();
+				rigAnimator.SetBool("LooksAtPlayer", true);
 				
 				if (DistanceToPlayer < 7)
 				{
