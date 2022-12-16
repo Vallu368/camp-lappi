@@ -81620,6 +81620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff114ded0fe6f643ade0c1fc7336025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restart: {fileID: 0}
 --- !u!65 &1851970203
 BoxCollider:
   m_ObjectHideFlags: 0
