@@ -26855,6 +26855,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandyBarPickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 637641293203977982, guid: 7f19f3a8081b16348ae838d083ecc3ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f19f3a8081b16348ae838d083ecc3ac, type: 3}
 --- !u!1001 &1007604469
@@ -71023,7 +71028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1486501373
 Transform:
   m_ObjectHideFlags: 0
@@ -80820,6 +80825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3286964560363657008, guid: 24e7d840b87684b4585e064252657783,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6825593938255783664, guid: 24e7d840b87684b4585e064252657783,
         type: 3}
       propertyPath: m_IsActive
@@ -81506,6 +81516,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 4939601523937369214, guid: a422efea3856ffc448c320d5d500510d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4939601523937369215, guid: a422efea3856ffc448c320d5d500510d,
         type: 3}
       propertyPath: m_RootOrder
@@ -81582,7 +81597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1851970202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81595,6 +81610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff114ded0fe6f643ade0c1fc7336025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restart: {fileID: 0}
 --- !u!65 &1851970203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90039,6 +90055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Collectables
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049992501954360935, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2049992502758519486, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
