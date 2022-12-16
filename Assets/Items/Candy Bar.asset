@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Candy Bar
   m_EditorClassIdentifier: 
   itemName: Candy Bar
-  itemIcon: {fileID: 21300000, guid: 93e8dd60d7a92674c8a8bfe58cdc27c9, type: 3}
+  itemIcon: {fileID: 21300000, guid: 359e1dc1a3716ff44a4de648363f6bd1, type: 3}
   itemPrefab: {fileID: 3582096938017616852, guid: 8b970339a3a42b2459c9178529d1b056,
     type: 3}
   description: Ah some chocolate. This definitely helps.

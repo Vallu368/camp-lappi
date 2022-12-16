@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A FOOKEN KNOIF
   m_EditorClassIdentifier: 
   itemName: Knife
-  itemIcon: {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
+  itemIcon: {fileID: 21300000, guid: 95bf3ccb1f83bc74c94ee4a3e8f009bc, type: 3}
   itemPrefab: {fileID: 5088267340930090820, guid: df36ae4d53cfb9e4d9b271e0fcab9879,
     type: 3}
   description: A knife. With this I can defend myself a bit.

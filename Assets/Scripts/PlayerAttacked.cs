@@ -19,7 +19,7 @@ public class PlayerAttacked : MonoBehaviour
     public float attackedTimer;
     private bool running;
     public AudioSource stabSound;
-
+    public bool sus;
 
 
     public int attacked;
@@ -75,38 +75,45 @@ public class PlayerAttacked : MonoBehaviour
         }
         if (beingAttacked)
         {
-            playerMov.enabled = false;
-            mash.StartButtonMash();
-            StartCoroutine(SpaceBarFlash());
-            playerMov.canMove = false;
-            if (playerWeapon == 0)
-            {
-                inv.selectedItem = 0;
-            }
-            if (playerWeapon == 1)
-            {
-                inv.selectedItem = inv.stickIndex;
-                if (stabSound.isPlaying)
+                playerMov.enabled = false;
+                mash.StartButtonMash();
+                StartCoroutine(SpaceBarFlash());
+                playerMov.canMove = false;
+                if (playerWeapon == 0)
                 {
-                    stabSound.Play();
+                    inv.selectedItem = 0;
                 }
-            }
-            if (playerWeapon == 2)
-            {
-                inv.selectedItem = inv.knifeIndex;
-                if (stabSound.isPlaying)
+                if (playerWeapon == 1)
                 {
-                    stabSound.Play();
+                    inv.selectedItem = inv.stickIndex;
+                    if (stabSound.isPlaying)
+                    {
+                        stabSound.Play();
+                    }
                 }
+                if (playerWeapon == 2)
+                {
+                    inv.selectedItem = inv.knifeIndex;
+                    if (stabSound.isPlaying)
+                    {
+                        stabSound.Play();
+                    }
+                }
+            if (!sus)
+            {
+                act.ChangeHeldItem();
+                sus = true;
             }
-            act.ChangeHeldItem();
-            anim.SetBool("Reset", false);
-            anim.SetBool("Attacked", true);
-            inv.disabled = true;
-            monsterMind.suspicion = 100;
+
+                anim.SetBool("Reset", false);
+                anim.SetBool("Attacked", true);
+                inv.disabled = true;
+                monsterMind.suspicion = 100;
+            
         }
         if (!beingAttacked)
         {
+            sus = false;
             stabSound.Stop();
             playerMov.enabled = true;
             spaceBar.SetActive(false);

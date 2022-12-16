@@ -70,7 +70,7 @@ public class PickUpItem : MonoBehaviour
         yield return new WaitForSeconds(5);
         StartCoroutine(fade.FadeOut(3f));
         playerMov.usingKeyItem = false;
-        StartCoroutine(inv.AddedItemText("BANDAGE USED TEXT HERE"));
+        StartCoroutine(inv.AddedItemText("Already feel better"));
         inv.keyItemsUsed++;
 
     }   
