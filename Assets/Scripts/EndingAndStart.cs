@@ -13,7 +13,7 @@ public class EndingAndStart : MonoBehaviour
     public string startText;
     public string endText;
     TextMeshProUGUI playerSpeech;
-    void Start()
+    void Awake()
     {
         sceneLoader = GameObject.Find("Canvas").GetComponent<SceneLoader>();
         fade = GameObject.Find("Canvas").GetComponent<FadeToBlack>();

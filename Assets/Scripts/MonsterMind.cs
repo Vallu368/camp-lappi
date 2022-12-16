@@ -21,6 +21,7 @@ public class MonsterMind : MonoBehaviour
 	float pursueTimer; //Cached variable to keep track of pursue duration
 	public float suspicion; //Variable that is increased when player is sensed, gives the monster pause to investigate and eventually initiates attack
 	public InventoryScript inv;
+	AudioSource attackSound;
 	
 	void Awake()
 	{
@@ -28,7 +29,9 @@ public class MonsterMind : MonoBehaviour
 		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerAttacked = GameObject.Find("Player").GetComponent<PlayerAttacked>();
 		anim = this.GetComponent<Animator>();
-    }
+		attackSound = this.GetComponent<AudioSource>();
+
+	}
 
 	void Update()
 	{
@@ -83,10 +86,15 @@ public class MonsterMind : MonoBehaviour
                 //Debug.Log($"Monster Hunting");
                 break;
 			case MonsterState.Attacking:
+				if (!attackSound.isPlaying)
+                {
+					attackSound.Play();
+                }
                 playerAttacked.beingAttacked = true;
 				anim.SetBool("isAttacking", true);
                 if (suspicion<=0f) //Temporary calming placeholder
 				{
+					attackSound.Stop();
 					playerAttacked.beingAttacked = false;
                     anim.SetBool("isAttacking", false);
                     Debug.Log($"<color=white>Monster calmed down</color>");

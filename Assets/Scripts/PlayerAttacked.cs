@@ -18,6 +18,7 @@ public class PlayerAttacked : MonoBehaviour
     public int playerWeapon; //0 no weapons 1 is stick, 2 is knife
     public float attackedTimer;
     private bool running;
+    public AudioSource stabSound;
 
 
 
@@ -35,6 +36,7 @@ public class PlayerAttacked : MonoBehaviour
         playerMov = GameObject.Find("Player").GetComponentInChildren<PlayerMovement>();
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         act = GameObject.Find("Player").GetComponentInChildren<ActiveItem>();
+        stabSound = GameObject.Find("StabSound").GetComponent<AudioSource>();
 
     }
 
@@ -55,7 +57,7 @@ public class PlayerAttacked : MonoBehaviour
         }
         if (playerWeapon == 0)
         {
-            attackedTimer = 10f;    
+            attackedTimer = 7f;    
         }
         if (playerWeapon == 1)
         {
@@ -84,10 +86,18 @@ public class PlayerAttacked : MonoBehaviour
             if (playerWeapon == 1)
             {
                 inv.selectedItem = inv.stickIndex;
+                if (stabSound.isPlaying)
+                {
+                    stabSound.Play();
+                }
             }
             if (playerWeapon == 2)
             {
                 inv.selectedItem = inv.knifeIndex;
+                if (stabSound.isPlaying)
+                {
+                    stabSound.Play();
+                }
             }
             act.ChangeHeldItem();
             anim.SetBool("Reset", false);
@@ -97,6 +107,7 @@ public class PlayerAttacked : MonoBehaviour
         }
         if (!beingAttacked)
         {
+            stabSound.Stop();
             playerMov.enabled = true;
             spaceBar.SetActive(false);
             mash.StopButtonMash();

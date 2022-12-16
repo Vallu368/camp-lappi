@@ -8,10 +8,12 @@ public class LightScript : MonoBehaviour
     public Light lampLight;
     public bool lightOn;
     public GameObject spotLight;
+    public AudioSource lampSound;
     void Start()
     {
         lampLight = GameObject.Find("LampLight").GetComponent<Light>();
         spotLight = GameObject.Find("Spot Light");
+        lampSound = this.GetComponent<AudioSource>();
 
     }
 
@@ -20,7 +22,8 @@ public class LightScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(lightOn)
+            lampSound.Play();
+            if (lightOn)
             {
                 lampLight.enabled = false;
                 lightOn = false;
