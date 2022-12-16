@@ -8,6 +8,7 @@ public class PlayerRaycast : MonoBehaviour
     RaycastHit hit;
    [HideInInspector] public InventoryScript inv;
     public GameObject interractText;
+    public GameObject playerSpeech;
     
 
 
@@ -16,18 +17,33 @@ public class PlayerRaycast : MonoBehaviour
         inv = GameObject.Find("Canvas").GetComponent<InventoryScript>();
         interractText = GameObject.Find("InterractText");
         interractText.SetActive(false);
+        
     }
 
     void Update()
     {
+        if (playerSpeech.activeSelf)
+        {
+            interractText.SetActive(false);
+        }
         Transform cameraTransform = Camera.main.transform;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, maxRange))
         {
+            if (hit.transform.tag == "Item" || hit.transform.tag == "KeyItem" || hit.transform.tag == "test")
+            {
+                if (!inv.running && !playerSpeech.activeSelf)
+                {
+                    interractText.SetActive(true);
+                }
+            }
+            else
+            {
+                interractText.SetActive(false);
+            }
             if (hit.transform.tag == "Item")
             {
-                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     inv.AddItemToInventory(hit.transform.GetComponent<PickUpItem>().item);
@@ -36,10 +52,8 @@ public class PlayerRaycast : MonoBehaviour
                 }
 
             }
-            else interractText.SetActive(false);
             if (hit.transform.tag == "KeyItem")
             {
-                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (hit.transform.GetComponent<PickUpItem>().isKeyitem == false)
@@ -108,17 +122,15 @@ public class PlayerRaycast : MonoBehaviour
                 }
 
             }
-            else interractText.SetActive(false);
             if (hit.transform.tag == "test") //using keyitems on camp or whatever
             {
-                interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.GetComponent<UseKeyItem>().UseItem();
                 }
 
                 }
-        } else interractText.SetActive(false);
+        } 
 
 
 
