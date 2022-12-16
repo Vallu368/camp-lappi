@@ -29,7 +29,7 @@ public class MonsterGaze : MonoBehaviour
 	void FixedUpdate()
 	{
 		eyeContactFactor = Vector3.Dot(transform.forward.normalized, (playerTransform.position - transform.position).normalized); //Compare alignment of direction forward and direction to player
-		if (eyeContactFactor > 0.85f)
+		if (eyeContactFactor > 0.75f)
 		{
 			Debug.DrawRay(transform.position, (playerTransform.position - transform.position).normalized * 10f, Color.red, Time.fixedDeltaTime);
 			//Debug.Log($"<color=cyan>Monster gets suspicious...</color>");
