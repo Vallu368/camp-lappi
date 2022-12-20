@@ -25754,7 +25754,7 @@ PrefabInstance:
     - target: {fileID: 6860991936757772153, guid: 7f9eb4e935d187a45a49c9f2e24ac198,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.09
+      value: 5.32
       objectReference: {fileID: 0}
     - target: {fileID: 6860991936757772153, guid: 7f9eb4e935d187a45a49c9f2e24ac198,
         type: 3}
@@ -100124,6 +100124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761972044047051836, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3142164872061221651, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
