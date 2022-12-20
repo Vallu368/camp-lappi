@@ -100120,6 +100120,16 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2049992502758519487, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: pickUpText
+      value: Huh a stick. With this I can definitely defend myself a bit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463124949944149568, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: pickUpText
+      value: 'A knife. With this I can defend myself a bit. '
+      objectReference: {fileID: 0}
     - target: {fileID: 2463124949944149575, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -100184,6 +100194,12 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503839923083411684, guid: 81a10cf3ea42f30409f357345dd2aa39,
+        type: 3}
+      propertyPath: pickUpText
+      value: ' Found the tent. Now I have to bring it back and build it back for
+        some shelter.'
       objectReference: {fileID: 0}
     - target: {fileID: 7863671643537829104, guid: 81a10cf3ea42f30409f357345dd2aa39,
         type: 3}
